@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BlueJays.App/BlueJays.App.csproj" />
+    <Project Path="src/BlueJays.Core/BlueJays.Core.csproj" />
+    <Project Path="src/BlueJays.SpeechHost/BlueJays.SpeechHost.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BlueJays.Tests/BlueJays.Tests.csproj" />
+  </Folder>
+</Solution>

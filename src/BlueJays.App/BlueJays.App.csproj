@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <AssemblyName>TranscriptionService</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets/App.ico</ApplicationIcon>
+    <Version>0.9.0</Version>
+    <InformationalVersion>Rosedale (0.9)</InformationalVersion>
+    <Product>Transcription Service</Product>
+    <Title>Transcription Service</Title>
+    <!-- The portable release bundles SenseVoice; other weights remain downloadable. -->
+    <IncludeOptionalSpeechModels Condition="'$(IncludeOptionalSpeechModels)' == ''">true</IncludeOptionalSpeechModels>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Assets/App.ico"/><Resource Include="Assets/About.png"/>
+    <Content Include="Assets/Logo.svg" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../models/gtcrn.onnx" Link="models/gtcrn.onnx" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2024-07-17/**/*" Link="models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2024-07-17/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../models/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25/**/*" Link="models/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" Condition="'$(IncludeOptionalSpeechModels)' == 'true'" />
+    <EmbeddedResource Include="Localization/Strings.tsv" LogicalName="BlueJays.Strings.tsv" />
+    <ProjectReference Include="../BlueJays.Core/BlueJays.Core.csproj" />
+    <ProjectReference Include="../BlueJays.SpeechHost/BlueJays.SpeechHost.csproj" ReferenceOutputAssembly="false" />
+    <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
+    <PackageReference Include="Whisper.net" Version="1.9.1" />
+    <PackageReference Include="Whisper.net.Runtime" Version="1.9.1" />
+    <PackageReference Include="Whisper.net.Runtime.Vulkan" Version="1.9.1" />
+  </ItemGroup>
+  <Target Name="CopySpeechHostToBuild" AfterTargets="Build">
+    <ItemGroup><SpeechHostFiles Include="../BlueJays.SpeechHost/bin/$(Configuration)/net10.0-windows/$(RuntimeIdentifier)/**/*" /></ItemGroup>
+    <Copy SourceFiles="@(SpeechHostFiles)" DestinationFiles="@(SpeechHostFiles->'$(OutDir)speech-host/%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+  <ItemGroup>
+    <Content Include="../../models/ggml-tiny.bin" Link="models/ggml-tiny.bin" Condition="'$(IncludeOptionalSpeechModels)' == 'true' and Exists('../../models/ggml-tiny.bin')" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../models/ggml-small-q5_1.bin" Link="models/ggml-small-q5_1.bin" Condition="'$(IncludeOptionalSpeechModels)' == 'true' and Exists('../../models/ggml-small-q5_1.bin')" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../models/ggml-base-q5_1.bin" Link="models/ggml-base-q5_1.bin" Condition="'$(IncludeOptionalSpeechModels)' == 'true' and Exists('../../models/ggml-base-q5_1.bin')" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../models/ggml-silero-v5.1.2.bin" Link="models/ggml-silero-v5.1.2.bin" Condition="Exists('../../models/ggml-silero-v5.1.2.bin')" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../licenses/*.txt" Link="licenses/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../README.md" Link="README.md" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../models/README.md" Link="models/README.md" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../THIRD-PARTY-NOTICES.md" Link="THIRD-PARTY-NOTICES.md" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../native/README.md" Link="native/README.md" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../native/SHA256SUMS.txt" Link="native/SHA256SUMS.txt" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

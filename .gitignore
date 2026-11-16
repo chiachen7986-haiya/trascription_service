@@ -1,0 +1,15 @@
+**/bin/
+**/obj/
+.vs/
+artifacts/
+releases/
+models/*.bin
+!models/ggml-silero-v5.1.2.bin
+models/sherpa-onnx-*/
+models/*.partial
+.env
+.env.*
+settings.json
+conversations.v1.dat*
+*.user
+*.suo

@@ -1,0 +1,18 @@
+<Window x:Class="BlueJays.App.Views.CaptionWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:loc="clr-namespace:BlueJays.App.Localization"
+ Title="Transcription Service · Captions" Width="680" Height="320" MinWidth="350" MinHeight="180" WindowStyle="None" ResizeMode="CanResizeWithGrip" Topmost="True" ShowActivated="False" Background="#F1F1F1" Foreground="#161616" FontSize="24" WindowStartupLocation="CenterScreen">
+ <Border BorderBrush="#777777" BorderThickness="1" Padding="14,8"><Grid>
+  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+  <Grid Background="Transparent" MouseLeftButtonDown="Drag_MouseDown" Margin="0,0,0,6"><Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+   <TextBlock Text="{Binding ConversationTitle}" FontSize="11" Foreground="#666666" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+   <StackPanel Grid.Column="1" Orientation="Horizontal"><Button Content="A−" Click="Smaller_Click" Padding="5,1" FontSize="11"/><Button Content="A+" Click="Larger_Click" Padding="5,1" FontSize="11"/><Button Content="×" Click="Close_Click" Padding="7,0" FontSize="18" Margin="0" ToolTip="{loc:Tr ClosePinnedCaptions}"/></StackPanel>
+  </Grid>
+  <ItemsControl Grid.Row="1" ItemsSource="{Binding FloatingLanguages}" Margin="0,0,0,7"><ItemsControl.ItemsPanel><ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate></ItemsControl.ItemsPanel><ItemsControl.ItemTemplate><DataTemplate><Button Content="{Binding Name}" Tag="{Binding Code}" Click="Priority_Click" Padding="8,3" FontSize="11" ToolTip="{loc:Tr PrioritizeThisLanguage}"><Button.Style><Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}"><Style.Triggers><DataTrigger Binding="{Binding IsSelected}" Value="True"><Setter Property="Background" Value="#1767D7"/><Setter Property="Foreground" Value="White"/></DataTrigger></Style.Triggers></Style></Button.Style></Button></DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
+  <ScrollViewer x:Name="CaptionScroll" Grid.Row="2" VerticalScrollBarVisibility="Auto" ScrollChanged="Scroll_Changed"><Grid>
+   <TextBlock Text="{loc:Tr CreateAConversationAndStartListening}" FontSize="16" Foreground="#666666" Visibility="{Binding IsEmpty, Converter={StaticResource BoolVisibility}}"/>
+   <ItemsControl ItemsSource="{Binding FloatingLines}"><ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding Text}" TextWrapping="Wrap" Margin="0,3,0,5"><TextBlock.Style><Style TargetType="TextBlock">
+    <Setter Property="FontSize" Value="{Binding FontSize, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource SecondaryCaptionSize}}"/><Setter Property="Foreground" Value="#626970"/>
+    <Style.Triggers><DataTrigger Binding="{Binding IsPriority}" Value="True"><Setter Property="FontSize" Value="{Binding FontSize, RelativeSource={RelativeSource AncestorType=Window}}"/><Setter Property="Foreground" Value="#152F4E"/><Setter Property="FontWeight" Value="SemiBold"/></DataTrigger></Style.Triggers>
+   </Style></TextBlock.Style></TextBlock></DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
+  </Grid></ScrollViewer>
+ </Grid></Border>
+</Window>

@@ -1,0 +1,51 @@
+Transcription Service
+Rosedale (0.9) - Windows x64 portable release
+
+1. Extract the complete ZIP to a writable folder on your PC. Do not run inside the ZIP.
+2. Open TranscriptionService.exe or Start-Transcription-Service.cmd.
+3. Click New Conversation, name the meeting and choose spoken and output languages.
+4. Add a Microphone and/or Computer audio source. Use the Teams/Zoom output device
+   for computer audio. Headphones help prevent capturing playback twice.
+5. For translation, open Settings > API configuration and enter your provider URL,
+   model and API key. Transcription alone works locally without an API.
+6. Start / Resume begins capture. Stop & finish completes pending captions.
+
+Included: SenseVoice Small INT8 (default, CPU), GTCRN microphone noise suppression,
+speech detection, .NET runtime, CPU/OpenVINO speech backends and Whisper Vulkan support.
+No .NET SDK installation is needed. This release was tested on Windows 11 x64.
+
+Qwen3-ASR and Whisper weights are optional. Select the engine under Settings >
+Speech recognition, then Download model, or browse to a company-staged model.
+Downloads require internet access. SenseVoice supports English, Japanese, Chinese,
+Korean and Cantonese. Choose another model for other spoken languages.
+
+For Japanese translated into English, choose Japanese as a spoken language and
+English as an output language. Add English as spoken only if participants speak it.
+Topic and terminology can improve names and specialized vocabulary.
+
+Floating captions: Pin captions opens an always-on-top window. Choose a language
+button to prioritize its text. Meeting room opens a large display; use F11 for full
+screen and Escape to leave full screen.
+
+Conversations are autosaved encrypted for the current Windows user. Reopen them
+using the conversation selector; Delete conversation and Clear all remove saved
+history after confirmation. Export captions creates a shareable text transcript.
+Saved data and API settings use %LOCALAPPDATA%\BlueJays for upgrade compatibility.
+Raw audio is not saved. When translation/context correction is enabled, transcript
+text and conversation context are sent to your configured API provider.
+
+Upgrading: stop and close the older version before opening this release. Keep your
+existing app-data folder to retain settings and saved conversations. Export any
+conversation still open in a much older memory-only version before closing it.
+If a saved model path points to an old package, select SenseVoice and browse to
+the models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2024-07-17 folder here.
+
+This is an unsigned internal release. If your organization restricts unsigned
+applications, have IT approve the package through its normal deployment process.
+SHA256SUMS.txt lists checksums for the shipped files; a ZIP checksum is supplied
+alongside the download. Checksums detect changes; they are not a code signature.
+
+This software is strictly for internal use only, for direct profit distribution or resale is prohibited
+
+Third-party components retain their respective license terms. See
+THIRD-PARTY-NOTICES.md and the licenses folder.

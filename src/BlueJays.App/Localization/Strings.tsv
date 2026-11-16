@@ -1,0 +1,272 @@
+# English key / Japanese / Simplified Chinese / Traditional Chinese
+Conversation history could not be saved. Close without saving? Choose No to export your transcripts first.	会話の履歴を保存できませんでした。保存せずに終了しますか？先に文字起こしをエクスポートする場合は「いいえ」を選択してください。	无法保存对话历史。是否不保存并关闭？选择“否”以先导出文字记录。	無法儲存對話歷史。是否不儲存並關閉？選擇「否」以先匯出文字記錄。
+Applies to microphone sources only. Computer audio is unchanged.	マイクの音声のみに適用されます。PCの再生音には適用されません。	仅适用于麦克风来源，不影响电脑音频。	僅適用於麥克風來源，不影響電腦音訊。
+Drafts update in place. Conversations are saved automatically on this computer.	途中の字幕は更新され、会話はこのPCに自動保存されます。	草稿会实时更新，对话会自动保存在本机。	草稿會即時更新，對話會自動儲存在本機。
+GTCRN microphone noise suppression	GTCRNでマイクの雑音を抑制	GTCRN麦克风降噪	GTCRN麥克風降噪
+Original	原文	原文	原文
+About	このアプリについて	关于	關於
+Prioritize this language	この言語を大きく表示	优先显示此语言	優先顯示此語言
+Delete conversation	会話を削除	删除对话	刪除對話
+Clear all	すべて削除	全部清除	全部清除
+Clear all conversations	すべての会話を削除	清除所有对话	清除所有對話
+Delete the selected conversation and its saved transcripts?	選択した会話と保存された文字起こしを削除しますか？	删除所选对话及其保存的文字记录？	刪除所選對話及其儲存的文字記錄？
+Permanently delete all saved conversations and transcripts?	保存されたすべての会話と文字起こしを完全に削除しますか？	永久删除所有已保存的对话和文字记录？	永久刪除所有已儲存的對話和文字記錄？
+Conversations are saved locally with Windows user encryption. Translation sends text to your selected API.	会話はWindowsユーザーの暗号化でローカルに保存されます。翻訳時は選択したAPIにテキストを送信します。	对话使用Windows用户加密保存在本机。翻译会向所选API发送文本。	對話使用Windows使用者加密儲存在本機。翻譯會向所選API傳送文字。
+Saved conversations could not be loaded. The original history file has been kept.	保存された会話を読み込めませんでした。元の履歴ファイルは保持されています。	无法加载已保存的对话，原始历史文件已保留。	無法載入已儲存的對話，原始歷史檔案已保留。
+Saved history could not be read. Export new conversations or use Clear all to reset history.	履歴を読み込めませんでした。新しい会話をエクスポートするか、すべて削除で履歴をリセットしてください。	无法读取历史。请导出新对话，或使用全部清除来重置历史。	無法讀取歷史。請匯出新對話，或使用全部清除來重設歷史。
+Could not save conversation history: {0}	会話の履歴を保存できませんでした: {0}	无法保存对话历史：{0}	無法儲存對話歷史：{0}
+Saved · unfinished	保存済み · 未完了	已保存·未完成	已儲存·未完成
+Choose what to capture	取り込む音声を選択	选择要捕获的音频	選擇要擷取的音訊
+Speech engine	音声認識エンジン	语音识别引擎	語音辨識引擎
+Qwen GPU is unavailable in this build. Select OpenVINO CPU or ONNX Runtime CPU.	このビルドではQwenのGPU処理は利用できません。OpenVINO CPUまたはONNX Runtime CPUを選択してください。	此版本不提供Qwen GPU。请选择OpenVINO CPU或ONNX Runtime CPU。	此版本不提供Qwen GPU。請選擇OpenVINO CPU或ONNX Runtime CPU。
+Qwen GPU is unavailable in this build. OpenVINO CPU is active.	このビルドではQwenのGPU処理は利用できないため、OpenVINO CPUを使用しています。	此版本不提供Qwen GPU，当前使用OpenVINO CPU。	此版本不提供Qwen GPU，目前使用OpenVINO CPU。
+CPU is the fastest SenseVoice option on the tested Iris Xe laptop. First OpenVINO startup compiles kernels and can take about a minute.	検証したIris Xe搭載PCでは、SenseVoiceはCPUで最も高速に動作します。OpenVINOの初回起動にはカーネルの準備で約1分かかる場合があります。	在测试的Iris Xe笔记本上，SenseVoice使用CPU最快。OpenVINO首次启动需要编译内核，可能耗时约一分钟。	在測試的Iris Xe筆電上，SenseVoice使用CPU最快。OpenVINO首次啟動需要編譯核心，可能耗時約一分鐘。
+Multilingual quality option. Final phrases avoid repeated decoding. OpenVINO runs the audio encoder; the frontend and text decoder stay on CPU for compatibility.	精度重視の多言語モデルです。標準では確定した音声区間のみを処理します。OpenVINOは音声エンコーダーを実行し、前処理とテキストのデコーダーは互換性のためCPUで動作します。	多语言高质量选项。默认处理完整语句以避免重复解码。OpenVINO运行音频编码器，前端和文本解码器保留在CPU上以确保兼容性。	多語言高品質選項。預設處理完整語句以避免重複解碼。OpenVINO執行音訊編碼器，前端和文字解碼器保留在CPU上以確保相容性。
+Compute device	処理デバイス	计算设备	運算裝置
+CPU threads	CPUスレッド数	CPU线程数	CPU執行緒數
+Model folder	モデルフォルダー	模型文件夹	模型資料夾
+Use CPU if OpenVINO cannot start	OpenVINOを起動できない場合はCPUを使用	OpenVINO无法启动时使用CPU	OpenVINO無法啟動時使用CPU
+Qwen live previews (slower)	Qwenの途中字幕を表示（処理が遅くなります）	Qwen实时预览（较慢）	Qwen即時預覽（較慢）
+Whisper (Vulkan / CPU)	Whisper（Vulkan / CPU）	Whisper（Vulkan / CPU）	Whisper（Vulkan / CPU）
+SenseVoice Small INT8	SenseVoice Small INT8	SenseVoice Small INT8	SenseVoice Small INT8
+Qwen3-ASR 0.6B INT8	Qwen3-ASR 0.6B INT8	Qwen3-ASR 0.6B INT8	Qwen3-ASR 0.6B INT8
+OpenVINO · Intel GPU	OpenVINO · Intel GPU	OpenVINO · Intel GPU	OpenVINO · Intel GPU
+OpenVINO · CPU	OpenVINO · CPU	OpenVINO · CPU	OpenVINO · CPU
+ONNX Runtime · CPU	ONNX Runtime · CPU	ONNX Runtime · CPU	ONNX Runtime · CPU
+Fast multilingual recognition for Japanese, Chinese, English, Korean and Cantonese. English accuracy can be lower; compare with Qwen or Whisper.	日本語・中国語・英語・韓国語・広東語に対応する高速な音声認識です。英語の精度は低くなる場合があるため、QwenやWhisperと比較してください。	快速识别日语、中文、英语、韩语和粤语。英语准确率可能较低，请与Qwen或Whisper比较。	快速辨識日語、中文、英語、韓語和粵語。英語準確率可能較低，請與Qwen或Whisper比較。
+Whisper uses Vulkan acceleration and fixed-language workers. Smaller models respond faster.	WhisperはVulkanによる高速化と言語別の処理を使用します。小さいモデルほど速く応答します。	Whisper使用Vulkan加速和固定语言工作线程。较小的模型响应更快。	Whisper使用Vulkan加速和固定語言工作執行緒。較小的模型回應更快。
+Official sherpa-onnx export · {0} MB download · SHA-256 verified	sherpa-onnx公式モデル · {0} MB · SHA-256検証済み	官方sherpa-onnx模型 · 下载{0} MB · SHA-256验证	官方sherpa-onnx模型 · 下載{0} MB · SHA-256驗證
+Select a complete model folder or download the model first.	必要なファイルが揃ったモデルフォルダーを選択するか、モデルをダウンロードしてください。	请选择完整的模型文件夹，或先下载模型。	請選擇完整的模型資料夾，或先下載模型。
+Select or download the speech model in Settings first.	先に設定で音声認識モデルを選択またはダウンロードしてください。	请先在设置中选择或下载语音识别模型。	請先在設定中選擇或下載語音辨識模型。
+OpenVINO could not start. CPU fallback is active. {0}	OpenVINOを起動できませんでした。CPUで処理します。{0}	OpenVINO无法启动，已回退到CPU。{0}	OpenVINO無法啟動，已改用CPU。{0}
+Ready	準備完了	就绪	就緒
+Listening	録音中	正在收听	正在收聽
+Listening · {0}/{1} audio sources	録音中 · 音声ソース {0}/{1}	正在收听·音频源 {0}/{1}	正在收聽·音訊來源 {0}/{1}
+Unavailable · reconnect or choose device	利用不可・再接続またはデバイスを選択	不可用·请重新连接或选择设备	無法使用·請重新連接或選擇裝置
+Choose device	デバイスを選択	选择设备	選擇裝置
+Use selected device	選択したデバイスを使用	使用所选设备	使用所選裝置
+Select an active device for this source. Its name and conversation history are kept.	このソースに使用する有効なデバイスを選択してください。ソース名と会話履歴は保持されます。	为此音频源选择可用设备。音频源名称和对话历史会保留。	為此音訊來源選擇可用裝置。來源名稱和對話歷史會保留。
+Choose an active audio device.	有効な音声デバイスを選択してください。	请选择可用的音频设备。	請選擇可用的音訊裝置。
+The selected audio device is disconnected or disabled.	選択した音声デバイスは未接続または無効です。	所选音频设备未连接或已禁用。	所選音訊裝置未連接或已停用。
+The selected audio device was disconnected or reconfigured.	選択した音声デバイスが切断されたか、構成が変更されました。	所选音频设备已断开连接或配置已更改。	所選音訊裝置已中斷連接或設定已變更。
+The saved device has the wrong audio input or output type.	保存されたデバイスの音声入力・出力の種類が一致しません。	已保存设备的音频输入或输出类型不匹配。	已儲存裝置的音訊輸入或輸出類型不符。
+The selected audio device could not start recording.	選択した音声デバイスで録音を開始できませんでした。	所选音频设备无法开始录音。	所選音訊裝置無法開始錄音。
+Windows denied audio access. Check microphone privacy permissions.	Windowsにより音声へのアクセスが拒否されました。マイクのプライバシー設定を確認してください。	Windows拒绝音频访问。请检查麦克风隐私权限。	Windows拒絕音訊存取。請檢查麥克風隱私權限。
+The saved audio device no longer exists.	保存された音声デバイスが見つかりません。	已保存的音频设备不存在。	已儲存的音訊裝置不存在。
+Audio source “{0}”: {1} Reconnect it or use Choose device.	音声ソース「{0}」：{1} 再接続するか、「デバイスを選択」で変更してください。	音频源“{0}”：{1} 请重新连接，或点击“选择设备”。	音訊來源「{0}」：{1} 請重新連接，或按「選擇裝置」。
+None of the selected audio sources could start.	選択された音声ソースを開始できませんでした。	所有所选音频源均无法启动。	所有所選音訊來源均無法啟動。
+Could not load the speech model: {0}	音声認識モデルを読み込めませんでした：{0}	无法加载语音模型：{0}	無法載入語音模型：{0}
+Check the model file and Visual C++ 2022 x64 runtime.	モデルファイルとVisual C++ 2022 x64ランタイムを確認してください。	请检查模型文件及Visual C++ 2022 x64运行库。	請檢查模型檔案及Visual C++ 2022 x64執行階段。
+DeepSeek was generating reasoning. Switched live translation to non-thinking mode.	DeepSeekの推論を検出したため、リアルタイム翻訳を非推論モードに切り替えました。	检测到DeepSeek正在推理，已将实时翻译切换为非推理模式。	偵測到DeepSeek正在推理，已將即時翻譯切換為非推理模式。
+The API reached its output limit. Retrying the remaining translations with a larger allowance.	APIの出力上限に達しました。完了した翻訳は保持し、残りをより大きな出力枠で再試行しています。	API已达到输出上限。保留已完成的翻译，并以更大的输出额度重试剩余翻译。	API已達到輸出上限。保留已完成的翻譯，並以更大的輸出額度重試剩餘翻譯。
+Translation recovered; live captions are continuing.	翻訳が復旧しました。リアルタイム字幕を続行しています。	翻译已恢复，正在继续实时字幕。	翻譯已恢復，正在繼續即時字幕。
+The API still stopped before all translations were complete after recovery. Check the provider's output limit and non-thinking setting.	再試行後も翻訳の完了前にAPIの出力が停止しました。プロバイダーの出力上限と非推論モード設定を確認してください。	重试后API仍在翻译完成前停止。请检查提供商的输出上限和非推理模式设置。	重試後API仍在翻譯完成前停止。請檢查提供商的輸出上限和非推理模式設定。
+For official DeepSeek, live translation automatically switches to non-thinking mode if reasoning is detected. Enable this option to use fast mode from the first request.	公式DeepSeekでは推論を検出すると、リアルタイム翻訳を非推論モードに自動で切り替えます。この設定を有効にすると最初のリクエストから高速モードになります。	使用官方DeepSeek时，如检测到推理，实时翻译会自动切换为非推理模式。启用此选项可从首次请求开始使用快速模式。	使用官方DeepSeek時，如偵測到推理，即時翻譯會自動切換為非推理模式。啟用此選項可從首次請求開始使用快速模式。
+Context adjusted · raw STT available	文脈により補正済み・認識原文を確認可能	已按上下文修正·可查看原始识别	已按上下文修正·可檢視原始辨識
+Raw recognition before context correction	文脈補正前の認識原文	上下文修正前的原始识别	上下文修正前的原始辨識
+Use bundled accuracy model	同梱の高精度モデルを使用	使用附带的高精度模型	使用隨附的高精度模型
+Use bundled balanced model	同梱の標準モデルを使用	使用附带的均衡模型	使用隨附的均衡模型
+Base quantized · balanced · 57 MB	Base量子化・標準・57 MB	Base量化·均衡·57 MB	Base量化·均衡·57 MB
+Small quantized · accuracy · 181 MB	Small量子化・精度重視・181 MB	Small量化·精度优先·181 MB	Small量化·精度優先·181 MB
+Neural speech detection · reject silence and background noise	ニューラル音声検出・無音や雑音を除外	神经语音检测·过滤静音与背景噪音	神經語音偵測·過濾靜音與背景雜音
+Beam search · more accurate but slower	ビーム探索・精度重視（処理が遅くなります）	束搜索·提高精度但速度较慢	束搜尋·提高精度但速度較慢
+Add names and Japanese spellings to the conversation glossary for recognition and translation. Example: WHP（ダブリューエイチピー）、経費精算、田中さん。	会話の用語欄に固有名詞や表記を追加すると、認識と翻訳の参考になります。例：WHP（ダブリューエイチピー）、経費精算、田中さん。	在对话术语表中添加姓名及日文写法，可辅助识别和翻译。例如：WHP（ダブリューエイチピー）、経費精算、田中さん。	在對話術語表中加入姓名及日文寫法，可輔助辨識和翻譯。例如：WHP（ダブリューエイチピー）、経費精算、田中さん。
+Context-assisted transcript correction	文脈を使った文字起こし補正	根据上下文辅助修正转写	根據上下文輔助修正轉寫
+Uses this provider and conversation context to suggest small spelling or homophone corrections alongside translation. Raw STT stays available. Corrections can be wrong. No output languages keeps transcription local.	翻訳時にこのAPIと会話の文脈を使い、表記や同音異義語の補正を提案します。認識原文は保持されます。補正にも誤りがあり得ます。翻訳先なしの場合はローカルのみです。	翻译时使用此API和对话上下文，辅助修正拼写或同音词。保留原始转写。修正仍可能有误。不选输出语言则仅本地转写。	翻譯時使用此API和對話上下文，輔助修正拼寫或同音詞。保留原始轉寫。修正仍可能有誤。不選輸出語言則僅本機轉寫。
+Lower values detect quieter voices. An adaptive gate handles background energy; neural detection adds a speech check before recognition.	値を下げると小声を検出します。適応型ゲートで背景音の音量に対応し、ニューラル検出で認識前に音声を確認します。	降低数值可检测轻声。自适应门限处理背景能量，神经检测在识别前确认语音。	降低數值可偵測輕聲。自適應閾值處理背景能量，神經偵測在辨識前確認語音。
+Download the recommended model, or browse to a company-staged copy.	推奨モデルをダウンロードするか、社内で配布されたモデルを選択してください。	请下载推荐模型，或选择公司提供的模型文件。	請下載建議模型，或選擇公司提供的模型檔案。
+Context correction was unavailable or rejected; using raw recognition for this clause.	文脈補正を利用できないか、補正が却下されました。この節は認識原文を使用します。	上下文修正不可用或已拒绝；本句使用原始识别。	上下文修正無法使用或已拒絕；本句使用原始辨識。
+Upgraded the legacy Tiny model to bundled quantized Base for better recognition. Small is available as a slower accuracy option in Speech recognition settings.	旧Tinyモデルを同梱の量子化Baseに更新しました。音声認識設定で、処理が遅めの高精度Smallも選択できます。	已将旧Tiny模型升级为附带的量化Base。语音识别设置中也可选择较慢的高精度Small模型。	已將舊Tiny模型升級為隨附的量化Base。語音辨識設定中也可選擇較慢的高精度Small模型。
+BlueJays · Live Interpreter	BlueJays · リアルタイム通訳	BlueJays · 实时口译	BlueJays · 即時口譯
+BlueJays · Meeting room	BlueJays · 会議室	BlueJays · 会议室	BlueJays · 會議室
+BlueJays · Pinned captions	BlueJays · フローティング字幕	BlueJays · 悬浮字幕	BlueJays · 懸浮字幕
+BlueJays settings	BlueJays 設定	BlueJays 设置	BlueJays 設定
+LIVE INTERPRETER   /   Listen locally. Understand together.	リアルタイム通訳 ／ 音声はローカルで、理解は共に。	实时口译 ／ 本地听写，共同理解。	即時口譯 ／ 本機聽寫，共同理解。
+Pinned captions	フローティング字幕	悬浮字幕	懸浮字幕
+Meeting room	会議室表示	会议室显示	會議室顯示
+Settings	設定	设置	設定
+New Conversation	新しい会話	新建对话	新增對話
+Conversation	会話	对话	對話
+Export captions	文字起こしを出力	导出记录	匯出記錄
+Cancel export	出力をキャンセル	取消导出	取消匯出
+Start / Resume	開始／再開	开始／继续	開始／繼續
+Stop & finish	停止して確定	停止并完成	停止並完成
+Audio sources	音声ソース	音频来源	音訊來源
+Choose what BlueJays hears.	取り込む音声を選択します。	选择要接收的音频。	選擇要接收的音訊。
+Microphone	マイク	麦克风	麥克風
+Computer audio	コンピューター音声	电脑声音	電腦聲音
+Audio device	音声デバイス	音频设备	音訊裝置
++ Add source	＋ ソース追加	＋ 添加来源	＋ 新增來源
+Refresh	更新	刷新	重新整理
+Sources stay separate for caption labels.	ソース名は字幕の話者ラベルになります。	来源名称用作字幕中的发言标签。	來源名稱用作字幕中的發言標籤。
+Source name	ソース名	来源名称	來源名稱
+Rename this source before starting a session.	開始前にソース名を変更できます。	请在开始录音前修改来源名称。	請在開始錄音前修改來源名稱。
+Remove	削除	移除	移除
+Drafts update in place · confirmed clauses share conversation context · latest 500 captions	下書きは随時更新・会話の文脈を共有・直近500件	草稿原位更新 · 共享对话上下文 · 最近500条	草稿原位更新 · 共用對話上下文 · 最近500則
+A clearer conversation	会話をもっと分かりやすく	让对话更清晰	讓對話更清晰
+Create a New Conversation, choose its languages, add an audio source, then start listening.	新しい会話で言語を選び、音声ソースを追加して開始してください。	新建对话并选择语言，添加音频来源，然后开始。	新增對話並選擇語言，新增音訊來源，然後開始。
+Choose the languages people will speak and the translations to display.	使用する言語と表示する翻訳言語を選択してください。	选择参与者使用的语言和需要显示的翻译语言。	選擇參與者使用的語言和需要顯示的翻譯語言。
+Conversation name	会話名	对话名称	對話名稱
+Language	言語	语言	語言
+Spoken	使用言語	发言语言	發言語言
+Translate into	翻訳先	翻译为	翻譯為
+Choose at least one spoken language and up to four output languages. No output languages means local transcription only. Multiple spoken languages use automatic recognition.	使用言語を1つ以上、翻訳先を最大4つ選択してください。翻訳先なしではローカル文字起こしのみ。使用言語が複数の場合は自動認識します。	至少选择一种发言语言，最多四种输出语言。不选输出语言则仅在本地转写。多种发言语言使用自动识别。	至少選擇一種發言語言，最多四種輸出語言。不選輸出語言則僅在本機轉寫。多種發言語言使用自動辨識。
+Meeting topic (optional)	会議の議題（任意）	会议主题（可选）	會議主題（選填）
+Names, acronyms and preferred terminology (optional)	固有名詞・略語・用語（任意）	姓名、缩写与专用术语（可选）	姓名、縮寫與專用術語（選填）
+Cancel	キャンセル	取消	取消
+Create conversation	会話を作成	创建对话	建立對話
+Close pinned captions	字幕ウィンドウを閉じる	关闭悬浮字幕	關閉懸浮字幕
+Create a conversation and start listening.	会話を作成して開始してください。	请创建对话并开始录音。	請建立對話並開始錄音。
+Full screen · F11	全画面 · F11	全屏 · F11	全螢幕 · F11
+Exit full screen · Esc	全画面を終了 · Esc	退出全屏 · Esc	結束全螢幕 · Esc
+Drag to the room monitor, then press F11. Escape exits full screen.	会議室のモニターへ移動してF11。Escで全画面を終了します。	拖到会议室显示器后按F11，按Esc退出全屏。	拖到會議室螢幕後按F11，按Esc結束全螢幕。
+Waiting for speech	音声を待っています	等待发言	等待發言
+The original speech will appear here.	原文がここに表示されます。	原文将在这里显示。	原文將在這裡顯示。
+Transcription-only conversation · no translation languages selected	文字起こしのみ・翻訳言語未選択	仅转写对话 · 未选择翻译语言	僅轉寫對話 · 未選擇翻譯語言
+Make it yours	使いやすく設定	个性化设置	個人化設定
+Local speech recognition. Your choice of translation provider.	ローカル音声認識と、お好みの翻訳プロバイダー。	本地语音识别，自选翻译服务。	本機語音辨識，自選翻譯服務。
+General	一般	常规	一般
+Application language	アプリの表示言語	应用显示语言	應用程式顯示語言
+Changes apply when you save settings. Transcript and translation languages are configured separately for each conversation.	保存すると表示言語が切り替わります。文字起こしと翻訳の言語は会話ごとに設定します。	保存设置后切换界面语言。转写和翻译语言在各对话中单独设置。	儲存設定後切換介面語言。轉寫和翻譯語言在各對話中個別設定。
+Conversation defaults	会話の初期設定	对话默认值	對話預設值
+Speech recognition	音声認識	语音识别	語音辨識
+Whisper · open-source speech recognition	Whisper · オープンソース音声認識	Whisper · 开源语音识别	Whisper · 開源語音辨識
+Runs on this computer's CPU. Download a multilingual model once, or select an existing whisper.cpp GGML .bin file.	このPCのCPUで動作します。多言語モデルをダウンロードするか、既存のwhisper.cpp GGML .binファイルを選択してください。	在本机CPU上运行。下载一次多语言模型，或选择已有的whisper.cpp GGML .bin文件。	在本機CPU上執行。下載一次多語言模型，或選擇既有的whisper.cpp GGML .bin檔案。
+Model file	モデルファイル	模型文件	模型檔案
+Browse…	参照…	浏览…	瀏覽…
+Download model	モデルをダウンロード	下载模型	下載模型
+tiny · fastest · ~75 MB	tiny · 最速 · 約75 MB	tiny · 最快 · 约75 MB	tiny · 最快 · 約75 MB
+base · balanced · ~142 MB	base · 標準 · 約142 MB	base · 均衡 · 约142 MB	base · 均衡 · 約142 MB
+small · more accurate · ~466 MB	small · 高精度 · 約466 MB	small · 更准确 · 约466 MB	small · 更準確 · 約466 MB
+Cancel download	ダウンロードを中止	取消下载	取消下載
+Download source: Hugging Face / ggerganov / whisper.cpp	配布元: Hugging Face / ggerganov / whisper.cpp	下载来源：Hugging Face / ggerganov / whisper.cpp	下載來源：Hugging Face / ggerganov / whisper.cpp
+Default spoken language for new conversations	新しい会話の既定の使用言語	新对话默认发言语言	新對話預設發言語言
+Each conversation chooses its own spoken and translation languages in New Conversation.	使用言語と翻訳先は「新しい会話」で会話ごとに選択します。	通过“新建对话”为每个对话选择发言和翻译语言。	透過「新增對話」為每個對話選擇發言和翻譯語言。
+Pause before finalizing (milliseconds)	確定までの無音時間（ミリ秒）	完成前的静音时长（毫秒）	完成前的靜音時長（毫秒）
+Maximum phrase length (seconds)	発話の最大長（秒）	话语最大时长（秒）	話語最大時長（秒）
+Speech gate sensitivity (RMS threshold)	音声検出感度（RMSしきい値）	语音检测灵敏度（RMS阈值）	語音偵測靈敏度（RMS閾值）
+Lower values detect quieter voices. Raise the threshold if background noise triggers captions. This MVP uses an energy gate, not neural noise detection.	小さい値で小声を検出します。雑音で反応する場合は値を上げてください。音量ベースの検出を使用しています。	较低值可检测更轻的声音。若背景噪音触发字幕，请提高阈值。目前采用能量检测而非神经网络降噪。	較低值可偵測更輕的聲音。若背景噪音觸發字幕，請提高閾值。目前採用能量偵測而非神經網路降噪。
+Preferred output language for new conversations	新しい会話の優先翻訳言語	新对话首选输出语言	新對話首選輸出語言
+API configuration	API設定	API配置	API設定
+Translation provider	翻訳プロバイダー	翻译服务提供商	翻譯服務供應商
+Conversations with output languages send transcript text, recent conversation history and terminology to this API. Audio stays local. Select no output languages for local transcription only.	翻訳を使う会話では文字起こし、最近の会話、用語をこのAPIに送信します。音声はローカルのままです。翻訳先なしで文字起こしのみ利用できます。	启用翻译的对话会将转写、近期对话和术语发送到此API。音频保留在本地。不选输出语言即可仅本地转写。	啟用翻譯的對話會將轉寫、近期對話和術語傳送到此API。音訊保留在本機。不選輸出語言即可僅本機轉寫。
+DeepSeek preset	DeepSeekのプリセット	DeepSeek预设	DeepSeek預設
+Generic / local preset	汎用／ローカル設定	通用／本地预设	通用／本機預設
+API base URL	APIベースURL	API基础URL	API基礎URL
+Example: https://api.deepseek.com/v1 · do not append /chat/completions	例: https://api.deepseek.com/v1 · /chat/completionsは付けません	例如：https://api.deepseek.com/v1 · 不要附加/chat/completions	例如：https://api.deepseek.com/v1 · 不要附加/chat/completions
+Model ID	モデルID	模型ID	模型ID
+API key	APIキー	API密钥	API金鑰
+Saved with Windows DPAPI encryption for your user account.	Windows DPAPIを使って現在のユーザー用に暗号化保存します。	使用Windows DPAPI为当前用户加密保存。	使用Windows DPAPI為目前使用者加密儲存。
+Send DeepSeek's thinking: disabled parameter	DeepSeekにthinking: disabledを送信	发送DeepSeek的thinking: disabled参数	傳送DeepSeek的thinking: disabled參數
+Disable this option for providers that do not accept the thinking extension. Use a fast model with streaming Chat Completions support.	thinking拡張に非対応の場合はオフにしてください。ストリーミングChat Completions対応の高速モデルを使用します。	若服务不支持thinking扩展，请关闭此选项。使用支持流式Chat Completions的快速模型。	若服務不支援thinking擴充，請關閉此選項。使用支援串流Chat Completions的快速模型。
+Save settings	設定を保存	保存设置	儲存設定
+English	英語	英语	英語
+Japanese	日本語	日语	日語
+Chinese	中国語	中文	中文
+Chinese (Simplified)	中国語（簡体字）	中文（简体）	中文（簡體）
+Chinese (Traditional)	中国語（繁体字）	中文（繁体）	中文（繁體）
+Korean	韓国語	韩语	韓語
+French	フランス語	法语	法語
+German	ドイツ語	德语	德語
+Spanish	スペイン語	西班牙语	西班牙語
+Portuguese	ポルトガル語	葡萄牙语	葡萄牙語
+Vietnamese	ベトナム語	越南语	越南語
+Thai	タイ語	泰语	泰語
+Indonesian	インドネシア語	印度尼西亚语	印度尼西亞語
+Hindi	ヒンディー語	印地语	印地語
+Arabic	アラビア語	阿拉伯语	阿拉伯語
+Italian	イタリア語	意大利语	義大利語
+Russian	ロシア語	俄语	俄語
+Ukrainian	ウクライナ語	乌克兰语	烏克蘭語
+Dutch	オランダ語	荷兰语	荷蘭語
+Polish	ポーランド語	波兰语	波蘭語
+Turkish	トルコ語	土耳其语	土耳其語
+Swedish	スウェーデン語	瑞典语	瑞典語
+Finnish	フィンランド語	芬兰语	芬蘭語
+Danish	デンマーク語	丹麦语	丹麥語
+Norwegian	ノルウェー語	挪威语	挪威語
+Detect automatically	自動検出	自动检测	自動偵測
+Create a conversation to begin	会話を作成してください	请先创建对话	請先建立對話
+Conversation ready · add a source, then start	会話の準備完了・ソースを追加して開始	对话已就绪 · 添加来源后开始	對話已就緒 · 新增來源後開始
+No conversation selected	会話が未選択です	未选择对话	未選擇對話
+Choose languages with New Conversation	「新しい会話」で言語を選択	通过“新建对话”选择语言	透過「新增對話」選擇語言
+Spoken: {0} · Output: {1}	使用言語: {0} · 翻訳先: {1}	发言：{0} · 输出：{1}	發言：{0} · 輸出：{1}
+Spoken: {0}	使用言語: {0}	发言语言：{0}	發言語言：{0}
+Translate into: {0}	翻訳先: {0}	翻译为：{0}	翻譯為：{0}
+Transcription only	文字起こしのみ	仅转写	僅轉寫
+Waiting for a complete clause…	節の確定を待っています…	等待完整语句…	等待完整語句…
+Updating translation…	翻訳を更新中…	正在更新翻译…	正在更新翻譯…
+Translating…	翻訳中…	正在翻译…	正在翻譯…
+Translated	翻訳済み	已翻译	已翻譯
+Draft translation	翻訳の下書き	翻译草稿	翻譯草稿
+Translation failed	翻訳に失敗しました	翻译失败	翻譯失敗
+Stopped · unfinished	停止・未完了	已停止 · 未完成	已停止 · 未完成
+Confirmed	確定済み	已确认	已確認
+Listening · draft · {0} characters stable	認識中・下書き・{0}文字確定	正在识别 · 草稿 · {0}字符稳定	正在辨識 · 草稿 · {0}字元穩定
+Listening · the last translation stays visible until the next is ready.	認識中・次の翻訳ができるまで前の翻訳を表示します。	正在识别 · 保留上一条翻译，直到下一条完成。	正在辨識 · 保留上一則翻譯，直到下一則完成。
+Ready · completed translations remain visible.	待機中・完了した翻訳を表示しています。	已就绪 · 已完成的翻译将保持显示。	已就緒 · 已完成的翻譯將保持顯示。
+Loading local speech model…	音声モデルを読み込み中…	正在加载本地语音模型…	正在載入本機語音模型…
+Listening · local speech recognition	認識中・ローカル音声認識	正在识别 · 本地语音识别	正在辨識 · 本機語音辨識
+Finishing the last utterance and translations…	最後の発話と翻訳を確定中…	正在完成最后的发言和翻译…	正在完成最後的發言和翻譯…
+Stopped · ready to listen again	停止・再開できます	已停止 · 可再次开始	已停止 · 可再次開始
+Audio stays in memory. When translation is enabled, transcript text is sent to your selected API.	音声はメモリ内のみで処理します。翻訳を使う場合は文字起こしを選択したAPIに送信します。	音频仅在内存中处理。启用翻译时，转写文本会发送到所选API。	音訊僅在記憶體中處理。啟用翻譯時，轉寫文字會傳送到所選API。
+Conversations stay in memory until the app closes. Export captions to keep them. Labels identify audio sources, not individual voices.	会話は終了までメモリ内に保持されます。保存するには出力してください。ラベルは音声ソースを示します。	对话仅保留到应用关闭，请导出以保存。标签代表音频来源，不区分个人声音。	對話僅保留到應用程式關閉，請匯出以儲存。標籤代表音訊來源，不區分個人聲音。
+Add and enable at least one audio source.	音声ソースを1つ以上追加して有効にしてください。	请添加并启用至少一个音频来源。	請新增並啟用至少一個音訊來源。
+This device is already in the source list.	このデバイスは追加済みです。	此设备已在来源列表中。	此裝置已在來源清單中。
+The MVP supports up to four sources. Fewer active sources give faster captions.	音声ソースは最大4つです。少ないほど字幕が速く表示されます。	最多支持四个来源，启用的来源越少，字幕越快。	最多支援四個來源，啟用的來源越少，字幕越快。
+No active device found. Connect a microphone or audio output and press Refresh.	デバイスが見つかりません。接続して「更新」を押してください。	未找到可用设备。请连接麦克风或输出设备后刷新。	未找到可用裝置。請連接麥克風或輸出裝置後重新整理。
+Download or select a Whisper GGML model in Settings first.	設定でWhisper GGMLモデルを選択またはダウンロードしてください。	请先在设置中选择或下载Whisper GGML模型。	請先在設定中選擇或下載Whisper GGML模型。
+Could not list audio devices: {0}	音声デバイスを取得できません: {0}	无法列出音频设备：{0}	無法列出音訊裝置：{0}
+Settings could not be saved: {0}	設定を保存できません: {0}	无法保存设置：{0}	無法儲存設定：{0}
+Could not start: {0}	開始できません: {0}	无法开始：{0}	無法開始：{0}
+Stopped with an error: {0}	エラーにより停止しました: {0}	停止时发生错误：{0}	停止時發生錯誤：{0}
+Check the model, audio devices and Visual C++ 2022 x64 runtime.	モデル、音声デバイス、Visual C++ 2022 x64ランタイムを確認してください。	请检查模型、音频设备和Visual C++ 2022 x64运行库。	請檢查模型、音訊裝置和Visual C++ 2022 x64執行階段。
+Enter a name, select at least one spoken language and no more than four output languages.	名前、1つ以上の使用言語、最大4つの翻訳先を指定してください。	请输入名称，至少选择一种发言语言，最多四种输出语言。	請輸入名稱，至少選擇一種發言語言，最多四種輸出語言。
+Conversation {0}	会話 {0}	对话 {0}	對話 {0}
+Connecting to Hugging Face…	Hugging Faceに接続中…	正在连接Hugging Face…	正在連線Hugging Face…
+Downloading model…	モデルをダウンロード中…	正在下载模型…	正在下載模型…
+Downloading model… {0}	モデルをダウンロード中… {0}	正在下载模型… {0}	正在下載模型… {0}
+Model ready. Save settings to use it.	準備完了。設定を保存して使用してください。	模型已就绪，保存设置即可使用。	模型已就緒，儲存設定即可使用。
+Download canceled.	ダウンロードを中止しました。	下载已取消。	下載已取消。
+Download failed: {0}	ダウンロードに失敗しました: {0}	下载失败：{0}	下載失敗：{0}
+Canceling download…	ダウンロードを中止中…	正在取消下载…	正在取消下載…
+The model file does not exist.	モデルファイルがありません。	模型文件不存在。	模型檔案不存在。
+Enter a translation model and target language.	翻訳モデルと翻訳先言語を入力してください。	请输入翻译模型和目标语言。	請輸入翻譯模型和目標語言。
+No captions to export yet.	出力する文字起こしがありません。	暂无可导出的记录。	暫無可匯出的記錄。
+Text file (*.txt)|*.txt	テキストファイル (*.txt)|*.txt	文本文件 (*.txt)|*.txt	文字檔案 (*.txt)|*.txt
+Whisper GGML model (*.bin)|*.bin	Whisper GGMLモデル (*.bin)|*.bin	Whisper GGML模型 (*.bin)|*.bin	Whisper GGML模型 (*.bin)|*.bin
+Generating meeting summary… {0}	会議の要約を作成中… {0}	正在生成会议摘要… {0}	正在產生會議摘要… {0}
+Captions exported.	文字起こしを出力しました。	记录已导出。	記錄已匯出。
+Export failed: {0}	出力に失敗しました: {0}	导出失败：{0}	匯出失敗：{0}
+Exported transcript; summary unavailable: {0}	文字起こしを出力しました。要約は作成できませんでした: {0}	记录已导出，摘要不可用：{0}	記錄已匯出，摘要無法產生：{0}
+Summary unavailable: API is not configured.	要約なし: APIが設定されていません。	摘要不可用：尚未配置API。	摘要無法產生：尚未設定API。
+Summary canceled; transcript retained.	要約を中止しました。文字起こしは保持されます。	摘要已取消，记录已保留。	摘要已取消，記錄已保留。
+Meeting summary	会議の要約	会议摘要	會議摘要
+API timeout	APIの応答がタイムアウトしました	API响应超时	API回應逾時
+Translation timed out (30 seconds).	翻訳がタイムアウトしました（30秒）。	翻译超时（30秒）。	翻譯逾時（30秒）。
+Speech recognition cannot keep up. Stop and use a smaller model or fewer sources; no further audio can be safely queued.	音声認識が追いつきません。停止して小さいモデルまたは少ないソースで再開してください。	语音识别跟不上，请停止后使用更小的模型或更少的来源。音频队列已满。	語音辨識跟不上，請停止後使用更小的模型或更少的來源。音訊佇列已滿。
+Translation backlog is full. Stop and check provider responsiveness before resuming.	翻訳の待ち行列がいっぱいです。停止してプロバイダーの応答を確認してください。	翻译队列已满，请停止并检查服务响应速度后再继续。	翻譯佇列已滿，請停止並檢查服務回應速度後再繼續。
+Finishing timed out. Some captions remain incomplete; their text is retained.	確定処理がタイムアウトしました。未完了の字幕もテキストは保持されています。	完成处理超时。部分字幕尚未完成，文本已保留。	完成處理逾時。部分字幕尚未完成，文字已保留。
+Saved settings could not be loaded. Re-enter the model, sources and API key in Settings.	設定を読み込めません。設定でモデル、ソース、APIキーを再入力してください。	无法加载已保存的设置，请重新配置模型、来源和API密钥。	無法載入已儲存的設定，請重新設定模型、來源和API金鑰。
+Decisions	決定事項	决策事项	決策事項
+Action items / To-do	アクション／To-do	行动事项／待办	行動事項／待辦
+Next meeting schedule	次回会議の予定	下次会议安排	下次會議安排
+No decisions explicitly mentioned.	明示された決定事項はありません。	未明确提及决策事项。	未明確提及決策事項。
+No action items explicitly mentioned.	明示されたアクションはありません。	未明确提及待办事项。	未明確提及待辦事項。
+No next meeting schedule explicitly mentioned.	次回会議の予定への明示的な言及はありません。	未明确提及下次会议安排。	未明確提及下次會議安排。
+Owner	担当	负责人	負責人
+Due	期限	截止日期	截止日期
+Not specified	指定なし	未指定	未指定
+Proposed	提案	提议	提議
+Scheduled	予定確定	已安排	已安排
+Transcript	文字起こし	对话记录	對話記錄
+Summary covers the exported captions only. Unconfirmed text may contain recognition errors.	要約の対象は出力された文字起こしのみです。未確定のテキストには認識誤りが含まれる場合があります。	摘要仅涵盖本次导出的记录。未确认文本可能包含识别错误。	摘要僅涵蓋本次匯出的記錄。未確認文字可能包含辨識錯誤。
+Vulkan runs speech recognition on a compatible GPU. CPU fallback is automatic.	Vulkan は対応 GPU で音声認識を実行します。利用できない場合は CPU を使用します。	Vulkan 使用兼容的 GPU 进行语音识别；不可用时自动使用 CPU。	Vulkan 使用相容的 GPU 進行語音辨識；無法使用時自動使用 CPU。
+Use Vulkan GPU acceleration (recommended)	Vulkan GPU アクセラレーションを使用（推奨）	使用 Vulkan GPU 加速（推荐）	使用 Vulkan GPU 加速（建議）
+Decode two languages simultaneously	2 言語を同時にデコード	同时解码两种语言	同時解碼兩種語言
+Two concurrent decodes share the same GPU and may be slower.	同時デコードは同じ GPU を共有するため、遅くなる場合があります。	并行解码共享同一个 GPU，可能反而更慢。	並行解碼共用同一個 GPU，可能反而較慢。
+Audio from each source stays in order. Separate sources can decode concurrently.	各音声ソース内の順序を保持します。異なるソースは並行処理できます。	每个音频源内保持顺序，不同音频源可并行解码。	每個音訊來源內維持順序，不同來源可並行解碼。
+{0} · {1} language workers	{0} · {1} 言語ワーカー	{0} · {1} 个语言工作线程	{0} · {1} 個語言工作執行緒
+STT delay: {0:F1}s	音声認識の遅延: {0:F1} 秒	语音识别延迟：{0:F1} 秒	語音辨識延遲：{0:F1} 秒
+Vulkan could not be enabled for every decoder. CPU fallback is active.	一部またはすべてのデコーダーで Vulkan を利用できないため、CPU にフォールバックしています。	部分或全部解码器无法启用 Vulkan，已使用 CPU 回退。	部分或全部解碼器無法啟用 Vulkan，已使用 CPU 備援。
+Speech recognition is {0:F0} seconds behind. Use the balanced model or fewer audio sources.	音声認識が {0:F0} 秒遅れています。バランス型モデルに変更するか、音声ソースを減らしてください。	语音识别落后 {0:F0} 秒，请使用均衡模型或减少音频源。	語音辨識落後 {0:F0} 秒，請使用平衡模型或減少音訊來源。
