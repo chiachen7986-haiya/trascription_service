@@ -21,7 +21,7 @@ Speech engine	音声認識エンジン	语音识别引擎	語音辨識引擎
 Qwen GPU is unavailable in this build. Select OpenVINO CPU or ONNX Runtime CPU.	このビルドではQwenのGPU処理は利用できません。OpenVINO CPUまたはONNX Runtime CPUを選択してください。	此版本不提供Qwen GPU。请选择OpenVINO CPU或ONNX Runtime CPU。	此版本不提供Qwen GPU。請選擇OpenVINO CPU或ONNX Runtime CPU。
 Qwen GPU is unavailable in this build. OpenVINO CPU is active.	このビルドではQwenのGPU処理は利用できないため、OpenVINO CPUを使用しています。	此版本不提供Qwen GPU，当前使用OpenVINO CPU。	此版本不提供Qwen GPU，目前使用OpenVINO CPU。
 CPU is the fastest SenseVoice option on the tested Iris Xe laptop. First OpenVINO startup compiles kernels and can take about a minute.	検証したIris Xe搭載PCでは、SenseVoiceはCPUで最も高速に動作します。OpenVINOの初回起動にはカーネルの準備で約1分かかる場合があります。	在测试的Iris Xe笔记本上，SenseVoice使用CPU最快。OpenVINO首次启动需要编译内核，可能耗时约一分钟。	在測試的Iris Xe筆電上，SenseVoice使用CPU最快。OpenVINO首次啟動需要編譯核心，可能耗時約一分鐘。
-Multilingual quality option. Final phrases avoid repeated decoding. OpenVINO runs the audio encoder; the frontend and text decoder stay on CPU for compatibility.	精度重視の多言語モデルです。標準では確定した音声区間のみを処理します。OpenVINOは音声エンコーダーを実行し、前処理とテキストのデコーダーは互換性のためCPUで動作します。	多语言高质量选项。默认处理完整语句以避免重复解码。OpenVINO运行音频编码器，前端和文本解码器保留在CPU上以确保兼容性。	多語言高品質選項。預設處理完整語句以避免重複解碼。OpenVINO執行音訊編碼器，前端和文字解碼器保留在CPU上以確保相容性。
+Final phrases avoid repeated decoding. OpenVINO runs the audio encoder. The frontend and text decoder run on CPU.	標準では確定した音声区間のみを処理します。OpenVINOは音声エンコーダーを実行し、前処理とテキストのデコーダーはCPUで動作します。	默认处理完整语句以避免重复解码。OpenVINO运行音频编码器，前端和文本解码器在CPU上运行。	預設處理完整語句以避免重複解碼。OpenVINO執行音訊編碼器，前端和文字解碼器在CPU上執行。
 Compute device	処理デバイス	计算设备	運算裝置
 CPU threads	CPUスレッド数	CPU线程数	CPU執行緒數
 Model folder	モデルフォルダー	模型文件夹	模型資料夾
@@ -81,7 +81,6 @@ BlueJays · Live Interpreter	BlueJays · リアルタイム通訳	BlueJays · �
 BlueJays · Meeting room	BlueJays · 会議室	BlueJays · 会议室	BlueJays · 會議室
 BlueJays · Pinned captions	BlueJays · フローティング字幕	BlueJays · 悬浮字幕	BlueJays · 懸浮字幕
 BlueJays settings	BlueJays 設定	BlueJays 设置	BlueJays 設定
-LIVE INTERPRETER   /   Listen locally. Understand together.	リアルタイム通訳 ／ 音声はローカルで、理解は共に。	实时口译 ／ 本地听写，共同理解。	即時口譯 ／ 本機聽寫，共同理解。
 Pinned captions	フローティング字幕	悬浮字幕	懸浮字幕
 Meeting room	会議室表示	会议室显示	會議室顯示
 Settings	設定	设置	設定
@@ -92,7 +91,6 @@ Cancel export	出力をキャンセル	取消导出	取消匯出
 Start / Resume	開始／再開	开始／继续	開始／繼續
 Stop & finish	停止して確定	停止并完成	停止並完成
 Audio sources	音声ソース	音频来源	音訊來源
-Choose what BlueJays hears.	取り込む音声を選択します。	选择要接收的音频。	選擇要接收的音訊。
 Microphone	マイク	麦克风	麥克風
 Computer audio	コンピューター音声	电脑声音	電腦聲音
 Audio device	音声デバイス	音频设备	音訊裝置
@@ -103,7 +101,6 @@ Source name	ソース名	来源名称	來源名稱
 Rename this source before starting a session.	開始前にソース名を変更できます。	请在开始录音前修改来源名称。	請在開始錄音前修改來源名稱。
 Remove	削除	移除	移除
 Drafts update in place · confirmed clauses share conversation context · latest 500 captions	下書きは随時更新・会話の文脈を共有・直近500件	草稿原位更新 · 共享对话上下文 · 最近500条	草稿原位更新 · 共用對話上下文 · 最近500則
-A clearer conversation	会話をもっと分かりやすく	让对话更清晰	讓對話更清晰
 Create a New Conversation, choose its languages, add an audio source, then start listening.	新しい会話で言語を選び、音声ソースを追加して開始してください。	新建对话并选择语言，添加音频来源，然后开始。	新增對話並選擇語言，新增音訊來源，然後開始。
 Choose the languages people will speak and the translations to display.	使用する言語と表示する翻訳言語を選択してください。	选择参与者使用的语言和需要显示的翻译语言。	選擇參與者使用的語言和需要顯示的翻譯語言。
 Conversation name	会話名	对话名称	對話名稱
@@ -123,8 +120,6 @@ Drag to the room monitor, then press F11. Escape exits full screen.	会議室の
 Waiting for speech	音声を待っています	等待发言	等待發言
 The original speech will appear here.	原文がここに表示されます。	原文将在这里显示。	原文將在這裡顯示。
 Transcription-only conversation · no translation languages selected	文字起こしのみ・翻訳言語未選択	仅转写对话 · 未选择翻译语言	僅轉寫對話 · 未選擇翻譯語言
-Make it yours	使いやすく設定	个性化设置	個人化設定
-Local speech recognition. Your choice of translation provider.	ローカル音声認識と、お好みの翻訳プロバイダー。	本地语音识别，自选翻译服务。	本機語音辨識，自選翻譯服務。
 General	一般	常规	一般
 Application language	アプリの表示言語	应用显示语言	應用程式顯示語言
 Changes apply when you save settings. Transcript and translation languages are configured separately for each conversation.	保存すると表示言語が切り替わります。文字起こしと翻訳の言語は会話ごとに設定します。	保存设置后切换界面语言。转写和翻译语言在各对话中单独设置。	儲存設定後切換介面語言。轉寫和翻譯語言在各對話中個別設定。

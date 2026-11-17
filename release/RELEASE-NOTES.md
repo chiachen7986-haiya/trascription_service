@@ -1,4 +1,8 @@
-# Transcription Service · Rosedale (0.10.1)
+# Transcription Service · Dufferin (0.10.2)
+
+- Removed promotional copy from Settings and the empty conversation screen.
+
+## Rosedale (0.10.1)
 
 - Fixed token tracking for Mistral AI by requesting usage totals on streamed
   translations and meeting summaries.

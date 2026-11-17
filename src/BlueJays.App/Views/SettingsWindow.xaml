@@ -3,9 +3,8 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:loc="clr-namespace:BlueJays.App.Localization" xmlns:views="clr-namespace:BlueJays.App.Views"
  Title="Transcription Service · Settings" Width="740" Height="790" MinWidth="660" MinHeight="650" WindowStartupLocation="CenterOwner">
  <Grid Margin="24">
-  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
-  <StackPanel Margin="0,0,0,18"><TextBlock Text="{loc:Tr MakeItYours}" FontSize="25" FontWeight="SemiBold"/><TextBlock Text="{loc:Tr LocalSpeechRecognitionYourChoiceOfTranslationProvider}" Foreground="#65748B" Margin="0,5,0,0"/></StackPanel>
-  <TabControl x:Name="SettingsTabs" Grid.Row="1" Background="White" BorderBrush="#D4DEEB">
+  <Grid.RowDefinitions><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <TabControl x:Name="SettingsTabs" Background="White" BorderBrush="#D4DEEB">
    <TabItem Header="{loc:Tr General}"><ScrollViewer VerticalScrollBarVisibility="Auto"><StackPanel Margin="20">
     <TextBlock Text="{loc:Tr ApplicationLanguage}" FontSize="18" FontWeight="SemiBold"/>
 
@@ -75,8 +74,8 @@
    <TabItem Header="{loc:Tr TokenUsage}"><views:TokenUsageView x:Name="TokenUsageTab"/></TabItem>
    <TabItem Header="{loc:Tr About}"><views:AboutView/></TabItem>
   </TabControl>
-  <TextBlock Grid.Row="2" x:Name="ErrorText" TextWrapping="Wrap" Foreground="#A44225" Margin="0,12,0,12"/>
-  <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right"><Button Content="{loc:Tr Cancel}" Click="Cancel_Click"/><Button x:Name="SaveButton" Content="{loc:Tr SaveSettings}" Style="{StaticResource PrimaryButton}" Click="Save_Click" Margin="0"/></StackPanel>
+  <TextBlock Grid.Row="1" x:Name="ErrorText" TextWrapping="Wrap" Foreground="#A44225" Margin="0,12,0,12"/>
+  <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right"><Button Content="{loc:Tr Cancel}" Click="Cancel_Click"/><Button x:Name="SaveButton" Content="{loc:Tr SaveSettings}" Style="{StaticResource PrimaryButton}" Click="Save_Click" Margin="0"/></StackPanel>
  </Grid>
 </Window>
 

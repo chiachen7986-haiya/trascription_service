@@ -39,6 +39,7 @@ internal static class UiSmoke
                 {
                     var history = new BlueJays.App.Services.ConversationStore(historyDirectory);
                     var shell = new MainWindow(new BlueJays.App.Services.SettingsStore(historyDirectory), history);
+                    Render(shell, 1180, 820, "main-empty");
                     var state = (MainViewModel)shell.DataContext;
                     var savedConversation = new ConversationViewModel(new() { Name = "Saved meeting", TargetLanguages = ["English"] });
                     state.Conversations.Add(savedConversation); state.SelectedConversation = savedConversation;

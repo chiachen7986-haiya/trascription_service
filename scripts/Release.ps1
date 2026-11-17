@@ -7,7 +7,8 @@ Set-StrictMode -Version Latest
 $workspace = Split-Path $PSScriptRoot -Parent
 [xml]$project = Get-Content -Raw (Join-Path $workspace 'src/BlueJays.App/BlueJays.App.csproj')
 $version = $project.SelectSingleNode('/Project/PropertyGroup/Version').InnerText
-$name = "TranscriptionService-Rosedale-$version-win-x64" + $PackageSuffix
+$codename = $project.SelectSingleNode('/Project/PropertyGroup/ReleaseCodename').InnerText
+$name = "TranscriptionService-$codename-$version-win-x64" + $PackageSuffix
 $releaseRoot = Join-Path $workspace 'releases'
 $package = Join-Path $releaseRoot $name
 $archive = "$package.zip"

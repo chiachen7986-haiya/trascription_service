@@ -118,7 +118,7 @@ public partial class SettingsWindow : Window
         EngineHelp.Text = L.T(selectedEngine switch
         {
             SpeechEngine.SenseVoice => "Fast multilingual recognition for Japanese, Chinese, English, Korean and Cantonese. English accuracy can be lower; compare with Qwen or Whisper.",
-            SpeechEngine.Qwen3Asr => "Multilingual quality option. Final phrases avoid repeated decoding. OpenVINO runs the audio encoder; the frontend and text decoder stay on CPU for compatibility.",
+            SpeechEngine.Qwen3Asr => "Final phrases avoid repeated decoding. OpenVINO runs the audio encoder. The frontend and text decoder run on CPU.",
             _ => "Whisper uses Vulkan acceleration and fixed-language workers. Smaller models respond faster."
         });
         DownloadStatus.Text = whisper ? L.T("Download source: Hugging Face / ggerganov/whisper.cpp") :

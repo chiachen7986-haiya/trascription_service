@@ -1,8 +1,8 @@
 @echo off
 setlocal DisableDelayedExpansion
 pushd "%~dp0"
-rem Prefer the most recently completed Rosedale release.
-for /f "delims=" %%D in ('dir /b /ad /o-d "releases\TranscriptionService-Rosedale-*-win-x64*" 2^>nul') do (
+rem Prefer the most recently completed portable release.
+for /f "delims=" %%D in ('dir /b /ad /o-d "releases\TranscriptionService-*-win-x64*" 2^>nul') do (
     if exist "releases\%%D\build.ready" if exist "releases\%%D\TranscriptionService.exe" (
         if /I "%~1"=="--print-package" (echo releases\%%D\TranscriptionService.exe) else (start "" "releases\%%D\TranscriptionService.exe")
         goto done
