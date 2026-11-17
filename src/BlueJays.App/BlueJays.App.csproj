@@ -7,8 +7,8 @@
     <AssemblyName>TranscriptionService</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets/App.ico</ApplicationIcon>
-    <Version>0.10.0</Version>
-    <InformationalVersion>Rosedale (0.10.0)</InformationalVersion>
+    <Version>0.10.1</Version>
+    <InformationalVersion>Rosedale (0.10.1)</InformationalVersion>
     <Product>Transcription Service</Product>
     <Title>Transcription Service</Title>
     <!-- The portable release bundles SenseVoice; other weights remain downloadable. -->

@@ -1,4 +1,9 @@
-# Transcription Service · Rosedale (0.10.0)
+# Transcription Service · Rosedale (0.10.1)
+
+- Fixed token tracking for Mistral AI by requesting usage totals on streamed
+  translations and meeting summaries.
+
+## Rosedale (0.10.0)
 
 - Added reusable terminology dictionaries with per-entry language, optional Japanese
   readings, and JSON import and export. Select a dictionary when creating a conversation.

@@ -91,6 +91,41 @@ internal static class SettingsFeatureTests
             Check(usage.SequenceEqual(new ApiTokenUsage?[] { new(100, 50, 20), new(20, 8, 6), null }),
                 "Usage totals were missing, counted twice or treated as zero when absent.");
         });
+
+        yield return ("Mistral streamed translation requests usage and persists the returned counts", async () =>
+        {
+            var directory = Directory.CreateTempSubdirectory("BlueJays-mistral-usage-");
+            try
+            {
+                var store = new TokenUsageStore(directory.FullName);
+                using var http = new HttpClient(new Handler(async (request, token) =>
+                {
+                    using var payload = JsonDocument.Parse(await request.Content!.ReadAsStringAsync(token));
+                    var includeUsage = payload.RootElement.TryGetProperty("stream_options", out var options) &&
+                        options.GetProperty("include_usage").GetBoolean();
+                    var completion = JsonSerializer.Serialize(new
+                    {
+                        choices = new[] { new { delta = new { content = """{"translations":[{"id":"one","language":"English","text":"Good morning."}]}""" },
+                            finish_reason = "stop" } }
+                    });
+                    const string usage = """{"choices":[],"usage":{"prompt_tokens":130,"completion_tokens":32,"prompt_tokens_details":{"cached_tokens":64}}}""";
+                    var events = $"data: {completion}\n\n" + (includeUsage ? $"data: {usage}\n\n" : "") + "data: [DONE]\n\n";
+                    return new(HttpStatusCode.OK) { Content = new StringContent(events) };
+                }));
+                var settings = new AppSettings
+                {
+                    ApiBaseUrl = "https://api.mistral.ai/v1", ApiModel = "mistral-small-latest",
+                    SendThinkingDisabled = false, ContextualCorrectionEnabled = false
+                };
+                var translation = await new TranslationClient(http, store.Record).TranslateBatchAsync(
+                    [new("one", "Mic", "おはようございます。", 1, true, "ja")], "[]",
+                    new() { TargetLanguages = ["English"] }, settings, "");
+                var day = new TokenUsageStore(directory.FullName).Snapshot().Days.Single();
+                Check(translation.Single().Text == "Good morning." && day is { Input: 130, CachedInput: 64, Output: 32, Unreported: 0 },
+                    "Mistral translated the caption but its API usage was not recorded.");
+            }
+            finally { directory.Delete(recursive: true); }
+        });
     }
 
     private static Task InTemporaryDirectory(Action<string> action)

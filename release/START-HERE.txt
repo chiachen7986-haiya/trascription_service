@@ -1,5 +1,5 @@
 Transcription Service
-Rosedale (0.10.0) - Windows x64 portable release
+Rosedale (0.10.1) - Windows x64 portable release
 
 1. Extract the complete ZIP to a writable folder on your PC. Do not run inside the ZIP.
 2. Open TranscriptionService.exe or Start-Transcription-Service.cmd.

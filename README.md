@@ -1,4 +1,4 @@
-# Transcription Service · Rosedale (0.10.0)
+# Transcription Service · Rosedale (0.10.1)
 
 Windows 11 x64 desktop application, built with .NET 10 / WPF. Captures microphones
 and computer playback, recognizes speech locally with Whisper, SenseVoice, or Qwen3-ASR,
@@ -136,7 +136,7 @@ The pinned caption window has small language buttons. Choose the original speech
 an output language to enlarge it; other text remains smaller. This preference is
 saved per conversation. Empty translation placeholders are omitted.
 
-**About** displays the supplied logo, Transcription Service name, Rosedale (0.10.0),
+**About** displays the supplied logo, Transcription Service name, Rosedale (0.10.1),
 the internal-use disclaimer and the supplied image. The logo is also the Windows
 application icon. Earlier builds retain their old executable names; the launcher
 supports both names.

@@ -17,7 +17,9 @@ public static class ChatCompletionTransport
         deadline.CancelAfter(TimeSpan.FromSeconds(45));
         if (settings.SendThinkingDisabled) payload["thinking"] = new { type = "disabled" };
         var endpoint = TranslationClient.GetEndpoint(settings.ApiBaseUrl);
-        if (usageReceived is not null && endpoint.Host.Equals("api.openai.com", StringComparison.OrdinalIgnoreCase))
+        // OpenAI and Mistral require opting in to usage data on streamed responses.
+        if (usageReceived is not null && (endpoint.Host.Equals("api.openai.com", StringComparison.OrdinalIgnoreCase) ||
+            endpoint.Host.Equals("api.mistral.ai", StringComparison.OrdinalIgnoreCase)))
             payload["stream_options"] = new { include_usage = true };
         using var request = new HttpRequestMessage(HttpMethod.Post, endpoint);
         if (!string.IsNullOrWhiteSpace(apiKey)) request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", apiKey.Trim());
