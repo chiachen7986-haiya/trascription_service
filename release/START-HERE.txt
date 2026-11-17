@@ -1,5 +1,5 @@
 Transcription Service
-Rosedale (0.9) - Windows x64 portable release
+Rosedale (0.10.0) - Windows x64 portable release
 
 1. Extract the complete ZIP to a writable folder on your PC. Do not run inside the ZIP.
 2. Open TranscriptionService.exe or Start-Transcription-Service.cmd.
@@ -21,7 +21,8 @@ Korean and Cantonese. Choose another model for other spoken languages.
 
 For Japanese translated into English, choose Japanese as a spoken language and
 English as an output language. Add English as spoken only if participants speak it.
-Topic and terminology can improve names and specialized vocabulary.
+Create dictionaries in Settings > Terminology and select one in New Conversation.
+Settings > Token usage shows API usage and includes a price quote calculator.
 
 Floating captions: Pin captions opens an always-on-top window. Choose a language
 button to prioritize its text. Meeting room opens a large display; use F11 for full

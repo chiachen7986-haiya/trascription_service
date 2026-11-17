@@ -4,7 +4,7 @@ using BlueJays.Core.Models;
 namespace BlueJays.Core.Translation;
 
 /// <summary>One context-aware request translates a batch into all selected languages.</summary>
-public sealed class TranslationClient(HttpClient http)
+public sealed class TranslationClient(HttpClient http, Action<ApiTokenUsage?>? recordUsage = null)
 {
     private string? recoveredFastProvider;
     public event Action<string>? Notice;
@@ -168,7 +168,7 @@ public sealed class TranslationClient(HttpClient http)
                 else throw new InvalidOperationException("Provider returned an unexpected JSON record.");
             });
             var output = await ChatCompletionTransport.CompleteAsync(http, payload, requestSettings, apiKey, deadline.Token,
-                stream.Append, officialDeepSeek && !requestSettings.SendThinkingDisabled);
+                stream.Append, officialDeepSeek && !requestSettings.SendThinkingDisabled, recordUsage);
             if (!neededCorrections.SetEquals(correctionIds)) throw new InvalidOperationException("Provider omitted transcript corrections.");
             using var parsed = JsonDocument.Parse(ChatCompletionTransport.RemoveJsonFence(output));
             if (!expected.SetEquals(received)) throw new InvalidOperationException("Provider omitted one or more caption/language translations.");

@@ -19,6 +19,8 @@ public partial class MainWindow : Window
     private readonly MainViewModel viewModel = new();
     private readonly SettingsStore store;
     private readonly ConversationStore history;
+    private readonly TerminologyStore terminology;
+    private readonly TokenUsageStore tokenUsage;
     private readonly System.Windows.Threading.DispatcherTimer saveTimer = new() { Interval = TimeSpan.FromSeconds(1) };
     private readonly SemaphoreSlim historyGate = new(1);
     private bool historyCloseReady, historyWritable = true;
@@ -37,6 +39,8 @@ public partial class MainWindow : Window
     public MainWindow(SettingsStore settingsStore, ConversationStore conversationStore)
     {
         store = settingsStore; history = conversationStore;
+        terminology = new(store.UserDataDirectory);
+        tokenUsage = new(store.UserDataDirectory);
         var loaded = store.Load();
         settings = loaded.Settings;
         // Migrate the MVP's overly short 4 s / 450 ms defaults to conversation-friendly boundaries.
@@ -64,7 +68,14 @@ public partial class MainWindow : Window
 
     private void NewConversation_Click(object sender, RoutedEventArgs e)
     {
-        var dialog = new ConversationWindow(settings) { Owner = this };
+        TerminologyDictionary[] dictionaries;
+        try { dictionaries = terminology.Load(); }
+        catch (Exception ex) when (TerminologyStore.IsFileError(ex))
+        {
+            dictionaries = [];
+            viewModel.Notice = L.T("Could not load dictionaries.");
+        }
+        var dialog = new ConversationWindow(settings, dictionaries) { Owner = this };
         if (dialog.ShowDialog() != true || dialog.Result is null) return;
         var conversation = new ConversationViewModel(dialog.Result);
         viewModel.Conversations.Add(conversation); viewModel.SelectedConversation = conversation;
@@ -168,7 +179,7 @@ public partial class MainWindow : Window
     private void Settings_Click(object sender, RoutedEventArgs e) => ShowSettings();
     private void ShowSettings()
     {
-        var dialog = new SettingsWindow(settings, apiKey) { Owner = this };
+        var dialog = new SettingsWindow(settings, apiKey, terminology, tokenUsage) { Owner = this };
         if (dialog.ShowDialog() != true) return;
         settings = dialog.Result;
         apiKey = dialog.ApiKey;
@@ -190,7 +201,10 @@ public partial class MainWindow : Window
             viewModel.Busy = true;
             viewModel.Status = "Loading local speech model…";
             viewModel.Notice = "";
-            var active = new InterpretationSession(settings, apiKey, conversation.Options, conversation.Memory);
+            var options = conversation.Options;
+            if (options.TerminologyDictionaryId is { } dictionaryId)
+                options = terminology.Load().FirstOrDefault(dictionary => dictionary.Id == dictionaryId)?.ApplyTo(options) ?? options;
+            var active = new InterpretationSession(settings, apiKey, options, conversation.Memory, recordUsage: tokenUsage.Record);
             session = active;
             // Workers never touch WPF objects directly. Ignore late updates from a stopped session.
             active.Recognized += caption => Dispatch(active, () => viewModel.Add(caption));
@@ -306,7 +320,7 @@ public partial class MainWindow : Window
         {
             using var http = new HttpClient { Timeout = Timeout.InfiniteTimeSpan };
             var progress = new Progress<string>(value => viewModel.Notice = L.F("Generating meeting summary… {0}", value));
-            var result = await new TranscriptExporter(http).ExportAsync(dialog.FileName, snapshot, settings, apiKey, succeeded, progress, exportCancellation.Token);
+            var result = await new TranscriptExporter(http, tokenUsage.Record).ExportAsync(dialog.FileName, snapshot, settings, apiKey, succeeded, progress, exportCancellation.Token);
             viewModel.Notice = result.SummaryError is null ? L.T("Captions exported.") : L.F("Exported transcript; summary unavailable: {0}", result.SummaryError);
         }
         catch (Exception ex) { viewModel.Notice = L.F("Export failed: {0}", ex.Message); }

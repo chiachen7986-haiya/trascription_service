@@ -271,6 +271,7 @@ tests.AddRange(SpeechEngineTests.Cases());
 tests.AddRange(HistoryAndDenoisingTests.Cases());
 tests.AddRange(ReleaseDefaultsTests.Cases());
 tests.AddRange(TokenEfficiencyTests.Cases());
+tests.AddRange(SettingsFeatureTests.Cases());
 
 if (args.Length >= 3 && args[0] == "--integration")
 {

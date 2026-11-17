@@ -43,7 +43,6 @@
      <DockPanel><Button x:Name="CancelDownloadButton" DockPanel.Dock="Right" Content="{loc:Tr CancelDownload}" Click="CancelDownload_Click" Padding="8,3" FontSize="11" Visibility="Collapsed"/><TextBlock x:Name="DownloadStatus" Text="{loc:Tr DownloadSourceHuggingFaceGgerganovWhisperCpp}" FontSize="11" Foreground="#65748B" TextWrapping="Wrap"/></DockPanel>
      <StackPanel x:Name="WhisperAccuracyOptions"><CheckBox x:Name="NeuralDetectionBox" Margin="0,16,0,8"><TextBlock Text="{loc:Tr NeuralSpeechDetectionRejectSilenceAndBackgroundNoise}" TextWrapping="Wrap"/></CheckBox>
      <CheckBox x:Name="BeamSearchBox" Margin="0,0,0,12"><TextBlock Text="{loc:Tr BeamSearchMoreAccurateButSlower}" TextWrapping="Wrap"/></CheckBox></StackPanel>
-     <TextBlock Text="{loc:Tr AddNamesAndJapaneseSpellingsToTheConversationGlossaryFor}" TextWrapping="Wrap" Foreground="#65748B" FontSize="11" Margin="0,0,0,18"/>
      <DockPanel><TextBlock Text="{loc:Tr PauseBeforeFinalizingMilliseconds}"/><TextBlock DockPanel.Dock="Right" Text="{Binding Value, ElementName=SilenceSlider, StringFormat={}{0:F0}}" HorizontalAlignment="Right"/></DockPanel>
      <Slider x:Name="SilenceSlider" Minimum="700" Maximum="2000" TickFrequency="50" IsSnapToTickEnabled="True" Margin="0,8,0,18"/>
      <DockPanel><TextBlock Text="{loc:Tr MaximumPhraseLengthSeconds}"/><TextBlock DockPanel.Dock="Right" Text="{Binding Value, ElementName=PhraseSlider, StringFormat={}{0:F0}}" HorizontalAlignment="Right"/></DockPanel>
@@ -72,6 +71,8 @@
      </StackPanel>
     </StackPanel></ScrollViewer>
    </TabItem>
+   <TabItem Header="{loc:Tr Terminology}"><views:TerminologyView x:Name="TerminologyTab"/></TabItem>
+   <TabItem Header="{loc:Tr TokenUsage}"><views:TokenUsageView x:Name="TokenUsageTab"/></TabItem>
    <TabItem Header="{loc:Tr About}"><views:AboutView/></TabItem>
   </TabControl>
   <TextBlock Grid.Row="2" x:Name="ErrorText" TextWrapping="Wrap" Foreground="#A44225" Margin="0,12,0,12"/>

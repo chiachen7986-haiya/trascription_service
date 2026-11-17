@@ -30,11 +30,13 @@ public partial class SettingsWindow : Window
     public AppSettings Result { get; private set; }
     public string ApiKey { get; private set; }
 
-    public SettingsWindow(AppSettings settings, string apiKey)
+    public SettingsWindow(AppSettings settings, string apiKey, TerminologyStore? terminology = null, TokenUsageStore? tokenUsage = null)
     {
         original = Result = settings;
         ApiKey = apiKey;
         InitializeComponent();
+        if (terminology is not null) TerminologyTab.Initialize(terminology);
+        if (tokenUsage is not null) TokenUsageTab.Initialize(tokenUsage);
         MicNoiseBox.IsChecked = settings.MicrophoneNoiseSuppression;
         WindowSizing.FitToWorkArea(this);
         UiLanguageBox.ItemsSource = new UiLanguageOption[] { new("en", "English"), new("ja", "日本語"), new("zh-Hans", "中文（简体）"), new("zh-Hant", "中文（繁體）") };

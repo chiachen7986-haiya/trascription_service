@@ -1,4 +1,11 @@
-# Transcription Service — Rosedale (0.9)
+# Transcription Service · Rosedale (0.10.0)
+
+- Added reusable terminology dictionaries with per-entry language, optional Japanese
+  readings, and JSON import and export. Select a dictionary when creating a conversation.
+- Added a local API token meter for translation and meeting summaries, with a 14-day
+  chart and USD price quotes for OpenAI, Mistral AI, and DeepSeek.
+
+## Rosedale (0.9)
 
 First internal portable release for Windows x64, November 5, 2026.
 

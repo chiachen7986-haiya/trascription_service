@@ -93,7 +93,8 @@ public sealed class OnnxSpeechRecognizer : IConversationSpeechRecognizer, IAsync
             // The helper has its own working directory. Resolve staged relative
             // paths in the parent before crossing the process boundary.
             response = await SendAsync(new("load", settings.SpeechEngine, Path.GetFullPath(SpeechModels.PathFor(settings)), device,
-                settings.SpeechCpuThreads, languages.Length == 1 ? languages[0] : "auto", conversation.Glossary), deadline.Token);
+                settings.SpeechCpuThreads, languages.Length == 1 ? languages[0] : "auto",
+                conversation.RecognitionGlossary ?? conversation.Glossary), deadline.Token);
         }
         catch (OperationCanceledException) when (!token.IsCancellationRequested)
         { throw new TimeoutException("Speech model preparation exceeded three minutes."); }

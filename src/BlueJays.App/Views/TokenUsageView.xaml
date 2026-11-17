@@ -1,0 +1,72 @@
+<UserControl x:Class="BlueJays.App.Views.TokenUsageView"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:loc="clr-namespace:BlueJays.App.Localization">
+ <ScrollViewer VerticalScrollBarVisibility="Auto">
+  <StackPanel Margin="20">
+   <TextBlock Text="{loc:Tr RecordedAPITokens}" FontSize="18" FontWeight="SemiBold"/>
+   <TextBlock x:Name="TotalText" FontSize="30" FontWeight="SemiBold" Foreground="#1767D7" Margin="0,3,0,0"/>
+   <TextBlock x:Name="BreakdownText" TextWrapping="Wrap" Margin="0,0,0,3"/>
+   <TextBlock x:Name="CoverageText" TextWrapping="Wrap" Foreground="#65748B" FontSize="11"/>
+   <TextBlock x:Name="StorageWarning" Text="{loc:Tr TokenHistoryCouldNotBeLoadedOrSaved}" Visibility="Collapsed"
+    TextWrapping="Wrap" Foreground="#A44225" Margin="0,6,0,0"/>
+   <TextBlock Text="{loc:Tr DailyTokensLast14Days}" FontWeight="SemiBold" Margin="0,14,0,6"/>
+   <Border BorderBrush="#DEE5EF" BorderThickness="1" CornerRadius="7" Padding="8,7,8,5">
+    <StackPanel>
+     <TextBlock x:Name="ChartScale" HorizontalAlignment="Right" Foreground="#65748B" FontSize="11"/>
+     <Border BorderThickness="0,0,0,1" BorderBrush="#CDD8E6">
+      <ItemsControl x:Name="Chart" Height="72" AutomationProperties.Name="{loc:Tr DailyTokensLast14Days}">
+       <ItemsControl.ItemsPanel><ItemsPanelTemplate><UniformGrid Rows="1" Columns="14"/></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+       <ItemsControl.ItemTemplate>
+        <DataTemplate>
+         <Border Margin="3,0" Background="Transparent" ToolTip="{Binding Label}" AutomationProperties.Name="{Binding Label}">
+          <Border Height="{Binding Height}" VerticalAlignment="Bottom" Background="#1767D7" CornerRadius="3,3,0,0"/>
+         </Border>
+        </DataTemplate>
+       </ItemsControl.ItemTemplate>
+      </ItemsControl>
+     </Border>
+     <DockPanel Margin="0,4,0,0">
+      <TextBlock x:Name="ChartEnd" DockPanel.Dock="Right" Foreground="#65748B" FontSize="11"/>
+      <TextBlock x:Name="ChartStart" Foreground="#65748B" FontSize="11"/>
+     </DockPanel>
+    </StackPanel>
+   </Border>
+   <DockPanel Margin="0,17,0,8">
+    <Button DockPanel.Dock="Right" Content="{loc:Tr UseRecordedTotals}" Click="UseRecorded_Click" Padding="9,4" Margin="0"/>
+    <TextBlock Text="{loc:Tr APIPriceQuote}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center"/>
+   </DockPanel>
+   <Grid Margin="0,0,0,8">
+    <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="2*"/></Grid.ColumnDefinitions>
+    <StackPanel Margin="0,0,8,0">
+     <TextBlock Text="{loc:Tr Provider}"/>
+     <ComboBox x:Name="ProviderBox" Margin="0,4,0,0" SelectionChanged="Provider_Changed" AutomationProperties.Name="{loc:Tr Provider}"/>
+    </StackPanel>
+    <StackPanel Grid.Column="1">
+     <TextBlock Text="{loc:Tr Model}"/>
+     <ComboBox x:Name="ModelBox" Margin="0,4,0,0" DisplayMemberPath="Model" SelectionChanged="Quote_Changed" AutomationProperties.Name="{loc:Tr Model}"/>
+    </StackPanel>
+   </Grid>
+   <Grid>
+    <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions>
+    <StackPanel Margin="0,0,8,0">
+     <TextBlock Text="{loc:Tr InputTokens}"/>
+     <TextBox x:Name="InputBox" Text="0" Margin="0,4,0,0" MaxLength="26" TextChanged="Quote_Changed" AutomationProperties.Name="{loc:Tr InputTokens}"/>
+    </StackPanel>
+    <StackPanel Grid.Column="1" Margin="0,0,8,0">
+     <TextBlock Text="{loc:Tr CachedInputTokens}"/>
+     <TextBox x:Name="CachedBox" Text="0" Margin="0,4,0,0" MaxLength="26" TextChanged="Quote_Changed" AutomationProperties.Name="{loc:Tr CachedInputTokens}"/>
+    </StackPanel>
+    <StackPanel Grid.Column="2">
+     <TextBlock Text="{loc:Tr OutputTokens}"/>
+     <TextBox x:Name="OutputBox" Text="0" Margin="0,4,0,0" MaxLength="26" TextChanged="Quote_Changed" AutomationProperties.Name="{loc:Tr OutputTokens}"/>
+    </StackPanel>
+   </Grid>
+   <TextBlock x:Name="QuoteText" FontSize="20" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,7,0,0"
+    AutomationProperties.LiveSetting="Polite"/>
+   <TextBlock x:Name="RatesText" TextWrapping="Wrap" Foreground="#65748B" FontSize="11" Margin="0,3,0,0"/>
+   <TextBlock Text="{loc:Tr QuotesUsePublishedTextTokenRatesForStandardShortContext}" TextWrapping="Wrap" Foreground="#65748B" FontSize="11" Margin="0,3,0,0"/>
+   <TextBlock Margin="0,3,0,0"><Hyperlink Click="PricingSource_Click"><Run x:Name="SourceLabel"/></Hyperlink></TextBlock>
+  </StackPanel>
+ </ScrollViewer>
+</UserControl>

@@ -1,4 +1,4 @@
-# Transcription Service · Rosedale (0.9)
+# Transcription Service · Rosedale (0.10.0)
 
 Windows 11 x64 desktop application, built with .NET 10 / WPF. Captures microphones
 and computer playback, recognizes speech locally with Whisper, SenseVoice, or Qwen3-ASR,
@@ -15,7 +15,7 @@ Development builds made with `scripts/Build.cmd` still bundle all staged models.
 1. Click **New Conversation**. Enter a name, select languages people might speak,
    and choose up to **four output languages**. No output languages means entirely
    local transcription. Topic and terminology help recognition and translation.
-   Include names, Japanese kanji and readings in the glossary. For Japanese speech
+   Select a saved dictionary to include names, Japanese kanji and readings. For Japanese speech
    translated to English, select Japanese under Spoken and English under Translate into;
    only mark English as spoken if someone will actually speak it.
 2. Expand **+ Add source** to add a **Microphone** or **Computer audio** device. Enable
@@ -57,7 +57,7 @@ Development builds made with `scripts/Build.cmd` still bundle all staged models.
    summarization and still saves the raw transcript. An unavailable API or malformed
    response also preserves a transcript export with an explanation.
 
-Conversations, transcripts, translations, terminology and preferred caption languages
+Conversations, transcripts, translations, and preferred caption languages
 are saved automatically on this PC, encrypted for the current Windows user. Reopen
 them using the conversation selector. **Delete conversation** removes the selected
 conversation; **Clear all** removes every saved conversation after confirmation.
@@ -65,6 +65,23 @@ Audio is never recorded to disk. Existing API/device settings retain the
 LocalAppData/BlueJays location for compatibility. Audio-source labels identify
 devices, not individual voices. Conversations still open in older memory-only builds
 must be exported before closing that older build.
+
+## Terminology dictionaries and API usage
+
+Open **Settings → Terminology** to create a dictionary, add terms and acronyms,
+and assign a language to each entry. Japanese entries can include a reading.
+Use **Export** to save a dictionary as JSON and **Import** to add a copy. Saved
+dictionaries are kept locally and can be reused in **New Conversation**. Editing
+a dictionary applies the next time you start or resume a conversation that uses it.
+Deleting a conversation leaves its dictionary in the library.
+
+**Settings → Token usage** records provider-reported input and output tokens from
+live translation, contextual correction, and export summaries. It shows all-time
+totals since tracking began, responses without usage data, and a 14-day chart.
+The USD quote calculator accepts prospective token counts or the recorded totals.
+Use the selected provider's pricing link to check the dated rates, including
+DeepSeek's separate peak and off-peak prices. Dictionaries and usage totals are
+stored in local JSON files under `LocalAppData/BlueJays`.
 
 ## Speech engines and hardware
 
@@ -119,7 +136,7 @@ The pinned caption window has small language buttons. Choose the original speech
 an output language to enlarge it; other text remains smaller. This preference is
 saved per conversation. Empty translation placeholders are omitted.
 
-**About** displays the supplied logo, Transcription Service name, Rosedale (0.9),
+**About** displays the supplied logo, Transcription Service name, Rosedale (0.10.0),
 the internal-use disclaimer and the supplied image. The logo is also the Windows
 application icon. Earlier builds retain their old executable names; the launcher
 supports both names.

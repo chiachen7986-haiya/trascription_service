@@ -101,7 +101,7 @@ public sealed class WhisperTranscriber : ISpeechDecoder
         // Whisper's prompt is a spelling hint. Do not feed API guesses back into STT.
         // Whisper keeps a short suffix of its prompt. Budget non-ASCII text more
         // conservatively and put explicit terminology last, so history cannot crowd it out.
-        var glossary = Clip(conversation.Glossary.Trim(), 90);
+        var glossary = Clip((conversation.RecognitionGlossary ?? conversation.Glossary).Trim(), 90);
         var topic = Clip(conversation.Topic.Trim(), 20);
         var recent = Clip(recentRawText, 50, true);
         return string.Join("\n", new[] { recent, topic, glossary }.Where(s => s.Length > 0));

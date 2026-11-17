@@ -20,6 +20,7 @@ public sealed class InterpretationSession : IAsyncDisposable
     private readonly CoalescingQueue<TranslationItem> translations = new(500);
     private readonly List<IAudioCaptureSource> sources = [];
     private readonly HttpClient http;
+    private readonly Action<ApiTokenUsage?>? recordUsage;
     private readonly Func<AudioSourceSettings, IAudioCaptureSource> createCapture;
     private IConversationSpeechRecognizer? transcriber;
     private sealed class UtteranceState
@@ -44,10 +45,11 @@ public sealed class InterpretationSession : IAsyncDisposable
     public string BackendDescription => BackendName;
 
     public InterpretationSession(AppSettings settings, string apiKey, ConversationOptions conversation, ConversationMemory memory, HttpClient? http = null,
-        Func<AudioSourceSettings, IAudioCaptureSource>? createCapture = null)
+        Func<AudioSourceSettings, IAudioCaptureSource>? createCapture = null, Action<ApiTokenUsage?>? recordUsage = null)
     {
         this.settings = settings; this.apiKey = apiKey; this.conversation = conversation; this.memory = memory;
         this.http = http ?? new() { Timeout = Timeout.InfiniteTimeSpan };
+        this.recordUsage = recordUsage;
         this.createCapture = createCapture ?? (source => new AudioCaptureSource(source, settings));
     }
 
@@ -165,7 +167,7 @@ public sealed class InterpretationSession : IAsyncDisposable
 
     private async Task TranslationLoopAsync()
     {
-        var client = new TranslationClient(http);
+        var client = new TranslationClient(http, recordUsage);
         client.Notice += message => Warning?.Invoke(message);
         try
         {

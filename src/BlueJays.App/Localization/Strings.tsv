@@ -270,3 +270,59 @@ Audio from each source stays in order. Separate sources can decode concurrently.
 STT delay: {0:F1}s	音声認識の遅延: {0:F1} 秒	语音识别延迟：{0:F1} 秒	語音辨識延遲：{0:F1} 秒
 Vulkan could not be enabled for every decoder. CPU fallback is active.	一部またはすべてのデコーダーで Vulkan を利用できないため、CPU にフォールバックしています。	部分或全部解码器无法启用 Vulkan，已使用 CPU 回退。	部分或全部解碼器無法啟用 Vulkan，已使用 CPU 備援。
 Speech recognition is {0:F0} seconds behind. Use the balanced model or fewer audio sources.	音声認識が {0:F0} 秒遅れています。バランス型モデルに変更するか、音声ソースを減らしてください。	语音识别落后 {0:F0} 秒，请使用均衡模型或减少音频源。	語音辨識落後 {0:F0} 秒，請使用平衡模型或減少音訊來源。
+Terminology	用語辞書	术语词典	術語詞典
+Acronyms and terminology	略語と用語	缩写与术语	縮寫與術語
+Choose a saved dictionary when you create a conversation.	会話を作成するときに保存済みの辞書を選択できます。	创建对话时可选择已保存的词典。	建立對話時可選取已儲存的詞典。
+Saved dictionaries	保存済みの辞書	已保存的词典	已儲存的詞典
+New dictionary	新しい辞書	新建词典	新增詞典
+Import	インポート	导入	匯入
+Export	エクスポート	导出	匯出
+Delete dictionary	辞書を削除	删除词典	刪除詞典
+Dictionary name	辞書名	词典名称	詞典名稱
+Create dictionary	辞書を作成	创建词典	建立詞典
+Save name	名前を保存	保存名称	儲存名稱
+Dictionary entries	辞書の項目	词典条目	詞典條目
+Term or acronym	用語または略語	术语或缩写	術語或縮寫
+Japanese reading (optional)	日本語の読み（任意）	日语读音（选填）	日語讀音（選填）
+Meaning or expansion (optional)	意味または略語の正式名称（任意）	含义或全称（选填）	含義或全稱（選填）
+Add entry	項目を追加	添加条目	新增條目
+New entry	新しい項目	新建条目	新增空白條目
+Save entry	項目を保存	保存条目	儲存條目
+Delete entry	項目を削除	删除条目	刪除條目
+Other language	その他の言語	其他语言	其他語言
+Enter a dictionary name.	辞書名を入力してください。	请输入词典名称。	請輸入詞典名稱。
+Enter a term or acronym.	用語または略語を入力してください。	请输入术语或缩写。	請輸入術語或縮寫。
+Delete the dictionary “{0}”?	辞書「{0}」を削除しますか？	删除词典“{0}”？	要刪除詞典「{0}」嗎？
+Dictionary JSON (*.json)|*.json	辞書 JSON (*.json)|*.json	词典 JSON (*.json)|*.json	詞典 JSON (*.json)|*.json
+Could not load dictionaries.	辞書を読み込めませんでした。	无法读取词典。	無法讀取詞典。
+Could not save the dictionary.	辞書を保存できませんでした。	无法保存词典。	無法儲存詞典。
+Could not delete the dictionary.	辞書を削除できませんでした。	无法删除词典。	無法刪除詞典。
+Could not import the dictionary.	辞書をインポートできませんでした。	无法导入词典。	無法匯入詞典。
+Could not export the dictionary.	辞書をエクスポートできませんでした。	无法导出词典。	無法匯出詞典。
+Dictionary saved.	辞書を保存しました。	词典已保存。	詞典已儲存。
+Dictionary deleted.	辞書を削除しました。	词典已删除。	詞典已刪除。
+Dictionary imported.	辞書をインポートしました。	词典已导入。	詞典已匯入。
+Dictionary exported.	辞書をエクスポートしました。	词典已导出。	詞典已匯出。
+Terminology dictionary (optional)	用語辞書（任意）	术语词典（选填）	術語詞典（選填）
+Manage reusable dictionaries in Settings.	設定で再利用できる辞書を管理できます。	在设置中管理可重复使用的词典。	在設定中管理可重複使用的詞典。
+No dictionary	辞書を使用しない	不使用词典	不使用詞典
+Token usage	トークン使用量	词元用量	權杖用量
+Recorded API tokens	記録された API トークン	已记录的 API 词元	已記錄的 API 權杖
+{0:N0} input · {1:N0} cached input · {2:N0} output	入力 {0:N0} · キャッシュ済み入力 {1:N0} · 出力 {2:N0}	输入 {0:N0} · 缓存输入 {1:N0} · 输出 {2:N0}	輸入 {0:N0} · 快取輸入 {1:N0} · 輸出 {2:N0}
+Translation and summaries since tracking began · {0:N0} responses without usage data	計測開始以降の翻訳と要約 · 使用量の報告がない応答 {0:N0} 件	自开始记录以来的翻译和摘要 · {0:N0} 个响应无用量数据	開始記錄以來的翻譯與摘要 · {0:N0} 個回應無用量資料
+Token history could not be loaded or saved.	トークン使用履歴を読み込めないか、保存できませんでした。	无法读取或保存词元用量历史。	無法讀取或儲存權杖用量紀錄。
+Daily tokens (last 14 days)	日別トークン数（過去14日間）	每日词元（最近 14 天）	每日權杖（最近 14 天）
+{0} · {1:N0} tokens	{0} · {1:N0} トークン	{0} · {1:N0} 个词元	{0} · {1:N0} 個權杖
+{0:N0} tokens	{0:N0} トークン	{0:N0} 个词元	{0:N0} 個權杖
+API price quote	API 料金の見積もり	API 费用估算	API 費用估算
+Use recorded totals	記録済みの合計を使う	使用已记录用量	使用已記錄用量
+Provider	プロバイダー	服务提供商	服務供應商
+Model	モデル	模型	模型
+Input tokens	入力トークン	输入词元	輸入權杖
+Cached input tokens	キャッシュ済み入力トークン	缓存输入词元	快取輸入權杖
+Output tokens	出力トークン	输出词元	輸出權杖
+USD per million tokens · {0:0.####} input · {1:0.####} cached input · {2:0.####} output	100万トークンあたりの米ドル · 入力 {0:0.####} · キャッシュ済み入力 {1:0.####} · 出力 {2:0.####}	每百万词元美元价格 · 输入 {0:0.####} · 缓存输入 {1:0.####} · 输出 {2:0.####}	每百萬權杖美元價格 · 輸入 {0:0.####} · 快取輸入 {1:0.####} · 輸出 {2:0.####}
+Provider pricing · checked {0}	公式料金 · {0} 確認	官方定价 · 核对日期 {0}	官方定價 · 核對日期 {0}
+Use whole numbers. Cached input must be within total input.	整数を入力してください。キャッシュ済み入力は総入力以下にしてください。	请输入整数。缓存输入不得超过总输入。	請輸入整數。快取輸入不得超過總輸入。
+Estimated cost · USD {0}	見積額 · {0} 米ドル	预计费用 · {0} 美元	預估費用 · {0} 美元
+Quotes use published text-token rates for standard short-context requests.	公開されている標準の短いコンテキスト向けテキストトークン料金で見積もります。	按公布的标准短上下文文本词元费率估算。	按公布的標準短上下文文字權杖費率估算。

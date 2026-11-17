@@ -1,11 +1,13 @@
 # Build an isolated, self-contained Windows x64 release without touching older builds.
 # Run from PowerShell: .\scripts\Release.ps1
 [CmdletBinding()]
-param([ValidatePattern('^$|^-[a-z0-9-]+$')][string] $PackageSuffix = '-token-update-ja-fix')
+param([ValidatePattern('^$|^-[a-z0-9-]+$')][string] $PackageSuffix = '')
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $workspace = Split-Path $PSScriptRoot -Parent
-$name = 'TranscriptionService-Rosedale-0.9-win-x64' + $PackageSuffix
+[xml]$project = Get-Content -Raw (Join-Path $workspace 'src/BlueJays.App/BlueJays.App.csproj')
+$version = $project.SelectSingleNode('/Project/PropertyGroup/Version').InnerText
+$name = "TranscriptionService-Rosedale-$version-win-x64" + $PackageSuffix
 $releaseRoot = Join-Path $workspace 'releases'
 $package = Join-Path $releaseRoot $name
 $archive = "$package.zip"
@@ -24,7 +26,7 @@ function Invoke-DotNet {
 Push-Location $workspace
 try {
     Start-Transcript -Path (Join-Path $qa 'build.log') | Out-Null
-    Invoke-DotNet @('restore','BlueJays.slnx','--locked-mode')
+    Invoke-DotNet @('restore','BlueJays.slnx','--locked-mode','-r','win-x64','-p:SelfContained=true')
     Invoke-DotNet @('build','BlueJays.slnx','--no-restore','-c','Release')
     $tests = Join-Path $workspace 'tests\BlueJays.Tests\bin\Release\net10.0-windows\win-x64\BlueJays.Tests.dll'
     Invoke-DotNet @($tests,'--render-ui',(Join-Path $qa 'ui'))
@@ -48,7 +50,7 @@ try {
         (Get-ChildItem (Join-Path $package 'models') -Filter 'ggml-*.bin' | Where-Object Name -ne 'ggml-silero-v5.1.2.bin')) {
         throw 'Unexpected optional model in the slim release.'
     }
-    if (Get-ChildItem $package -Recurse -File | Where-Object { $_.Name -in @('settings.json','conversations.v1.dat') }) {
+    if (Get-ChildItem $package -Recurse -File | Where-Object { $_.Name -in @('settings.json','conversations.v1.dat','terminology.v1.json','token-usage.v1.json') }) {
         throw 'User data must never be included in a release.'
     }
     $fixture = Join-Path $workspace 'artifacts\model-comparison\audio'

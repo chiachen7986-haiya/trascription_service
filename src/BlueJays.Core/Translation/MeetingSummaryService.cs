@@ -16,7 +16,7 @@ public sealed record SummaryCaption(DateTimeOffset Time, string Source, string T
 /// Summarizes every caption in the export snapshot. Long meetings are summarized in
 /// bounded sections, then reduced; no transcript tail is silently truncated.
 /// </summary>
-public sealed class MeetingSummaryService(HttpClient http)
+public sealed class MeetingSummaryService(HttpClient http, Action<ApiTokenUsage?>? recordUsage = null)
 {
     private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNameCaseInsensitive = true };
     public async Task<MeetingSummary> GenerateAsync(IReadOnlyList<SummaryCaption> captions, string language,
@@ -69,7 +69,7 @@ public sealed class MeetingSummaryService(HttpClient http)
                 new { role = "user", content = input }
             }
         };
-        var response = await ChatCompletionTransport.CompleteAsync(http, payload, settings, apiKey, token);
+        var response = await ChatCompletionTransport.CompleteAsync(http, payload, settings, apiKey, token, usageReceived: recordUsage);
         var result = JsonSerializer.Deserialize<MeetingSummary>(ChatCompletionTransport.RemoveJsonFence(response), JsonOptions);
         if (result is null || string.IsNullOrWhiteSpace(result.Overview) || result.Decisions is null || result.Decisions.Any(string.IsNullOrWhiteSpace) || result.ActionItems is null || result.NextMeetings is null ||
             result.ActionItems.Any(a => a is null || string.IsNullOrWhiteSpace(a.Task)) ||

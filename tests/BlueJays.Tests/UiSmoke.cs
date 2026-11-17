@@ -5,6 +5,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using BlueJays.App;
+using BlueJays.App.Services;
 using BlueJays.App.ViewModels;
 using BlueJays.App.Views;
 using BlueJays.Core.Models;
@@ -90,9 +91,10 @@ internal static class UiSmoke
                     Render(new ConversationWindow(new()), 690, 760, "conversation-" + language);
                     Render(new AudioSourceDeviceWindow(new() { Name = "Room participants", DeviceId = "old", Kind = AudioSourceKind.ComputerAudio },
                         [new("available", "Speakers / Teams output", AudioSourceKind.ComputerAudio)]), 650, 350, "choose-device-" + language);
-                    for (var tab = 0; tab < 4; tab++)
+                    var tabs = (TabControl)settings.FindName("SettingsTabs");
+                    for (var tab = 0; tab < tabs.Items.Count; tab++)
                     {
-                        ((TabControl)settings.FindName("SettingsTabs")).SelectedIndex = tab;
+                        tabs.SelectedIndex = tab;
                         Render(settings, 740, 790, $"settings-{language}-{tab}");
                     }
                     Render(new AboutWindow(), 660, 740, "about-" + language);
@@ -109,6 +111,45 @@ internal static class UiSmoke
                     if (Localizer.T("Settings") == "Settings" && language != "en") throw new Exception("UI language did not switch.");
                 }
                 Localizer.Current.SetLanguage("en");
+                var settingsData = Directory.CreateTempSubdirectory("BlueJays-settings-ui-");
+                try
+                {
+                    var dictionaries = new TerminologyStore(settingsData.FullName);
+                    var usage = new TokenUsageStore(settingsData.FullName);
+                    var today = DateOnly.FromDateTime(DateTime.Now);
+                    for (var day = 0; day < 14; day++)
+                        usage.Record(new(800 + 120 * (day % 5), 300, 140), today.AddDays(-day));
+                    var settings = new SettingsWindow(new(), "", dictionaries, usage);
+                    var tabs = (TabControl)settings.FindName("SettingsTabs");
+                    tabs.SelectedIndex = 3;
+                    var terminology = (TerminologyView)settings.FindName("TerminologyTab");
+                    ((TextBox)terminology.FindName("NameBox")).Text = "Project terms";
+                    ((Button)terminology.FindName("SaveDictionaryButton")).RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    ((TextBox)terminology.FindName("TermBox")).Text = "経費精算";
+                    ((ComboBox)terminology.FindName("LanguageBox")).SelectedValue = "ja";
+                    ((TextBox)terminology.FindName("ReadingBox")).Text = "けいひせいさん";
+                    ((TextBox)terminology.FindName("MeaningBox")).Text = "Expense claims";
+                    ((Button)terminology.FindName("SaveEntryButton")).RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    var saved = dictionaries.Load().Single();
+                    if (saved.Entries.Single().Reading != "けいひせいさん") throw new Exception("Terminology editor did not persist the Japanese reading.");
+                    ((ListBox)terminology.FindName("EntriesBox")).SelectedIndex = 0;
+                    Render(settings, 740, 790, "settings-terminology-populated");
+                    var newConversation = new ConversationWindow(new(), [saved]);
+                    var choices = (ComboBox)newConversation.FindName("DictionaryBox");
+                    if (choices.Items.Count != 2) throw new Exception("The saved dictionary was not available for new conversations.");
+                    choices.SelectedIndex = 1;
+                    Render(newConversation, 690, 760, "conversation-terminology");
+                    tabs.SelectedIndex = 4;
+                    var tokenUsage = (TokenUsageView)settings.FindName("TokenUsageTab");
+                    ((ComboBox)tokenUsage.FindName("ProviderBox")).SelectedItem = "DeepSeek";
+                    ((TextBox)tokenUsage.FindName("InputBox")).Text = "1000000";
+                    ((TextBox)tokenUsage.FindName("CachedBox")).Text = "500000";
+                    ((TextBox)tokenUsage.FindName("OutputBox")).Text = "250000";
+                    var expected = Localizer.F("Estimated cost · USD {0}", 0.2265m.ToString("0.00####"));
+                    if (((TextBlock)tokenUsage.FindName("QuoteText")).Text != expected) throw new Exception("The DeepSeek quote did not update when entering tokens.");
+                    Render(settings, 740, 790, "settings-token-usage-populated");
+                }
+                finally { settingsData.Delete(recursive: true); }
                 foreach (var file in Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "src", "BlueJays.App"), "*.xaml", SearchOption.AllDirectories)
                     .Where(f => !f.Contains(Path.DirectorySeparatorChar + "obj" + Path.DirectorySeparatorChar) && !f.Contains(Path.DirectorySeparatorChar + "bin" + Path.DirectorySeparatorChar)))
                     foreach (Match match in Regex.Matches(File.ReadAllText(file), @"\{loc:Tr (\w+)\}"))

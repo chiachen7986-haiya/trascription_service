@@ -10,6 +10,8 @@ models/*.partial
 .env
 .env.*
 settings.json
+terminology.v1.json*
+token-usage.v1.json*
 conversations.v1.dat*
 *.user
 *.suo

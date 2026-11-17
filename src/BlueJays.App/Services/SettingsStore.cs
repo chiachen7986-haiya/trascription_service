@@ -9,6 +9,7 @@ namespace BlueJays.App.Services;
 public sealed class SettingsStore(string? dataDirectory = null, string? balancedModelPath = null, string? bundledModelDirectory = null)
 {
     public static string DataDirectory => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "BlueJays");
+    internal string UserDataDirectory { get; } = dataDirectory ?? DataDirectory;
     private readonly string settingsPath = Path.Combine(dataDirectory ?? DataDirectory, "settings.json");
     private readonly string balancedModel = balancedModelPath ?? BalancedModelPath;
     private readonly string bundledModels = bundledModelDirectory ?? Path.Combine(AppContext.BaseDirectory, "models");

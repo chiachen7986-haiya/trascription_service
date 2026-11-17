@@ -55,6 +55,9 @@ public sealed record ConversationOptions
     public List<string> TargetLanguages { get; init; } = ["English", "Japanese"];
     public string Topic { get; init; } = "";
     public string Glossary { get; init; } = "";
+    public Guid? TerminologyDictionaryId { get; init; }
+    [System.Text.Json.Serialization.JsonIgnore]
+    public string? RecognitionGlossary { get; init; }
     public string SpeechLanguage => SpokenLanguages.Distinct().Count() == 1 ? SpokenLanguages[0] : "auto";
 }
 

@@ -13,7 +13,7 @@ public sealed record ExportSnapshot(string Name, string Languages, string UiLang
 public sealed record ExportResult(string? SummaryError);
 
 /// <summary>Exports a fixed snapshot, so recognition and conversation switching can continue safely.</summary>
-public sealed class TranscriptExporter(HttpClient http)
+public sealed class TranscriptExporter(HttpClient http, Action<ApiTokenUsage?>? recordUsage = null)
 {
     public static bool CanSummarize(AppSettings settings, string key, bool apiSucceeded)
     {
@@ -31,7 +31,7 @@ public sealed class TranscriptExporter(HttpClient http)
         {
             try
             {
-                summary = await new MeetingSummaryService(http).GenerateAsync(snapshot.Captions.Select(c => c.Caption).ToArray(),
+                summary = await new MeetingSummaryService(http, recordUsage).GenerateAsync(snapshot.Captions.Select(c => c.Caption).ToArray(),
                     Localizer.SummaryLanguage(snapshot.UiLanguage), settings, key, progress, token);
             }
             catch (OperationCanceledException) when (token.IsCancellationRequested) { error = T("Summary canceled; transcript retained."); }

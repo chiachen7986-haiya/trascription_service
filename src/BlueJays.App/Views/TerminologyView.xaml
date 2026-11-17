@@ -1,0 +1,68 @@
+<UserControl x:Class="BlueJays.App.Views.TerminologyView"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:loc="clr-namespace:BlueJays.App.Localization">
+ <ScrollViewer VerticalScrollBarVisibility="Auto">
+  <StackPanel Margin="20">
+   <TextBlock Text="{loc:Tr AcronymsAndTerminology}" FontSize="18" FontWeight="SemiBold"/>
+   <TextBlock Text="{loc:Tr ChooseASavedDictionaryWhenYouCreateAConversation}" TextWrapping="Wrap" Foreground="#65748B" Margin="0,5,0,14"/>
+   <TextBlock Text="{loc:Tr SavedDictionaries}"/>
+   <ComboBox x:Name="DictionaryBox" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="Dictionary_Changed"
+    AutomationProperties.Name="{loc:Tr SavedDictionaries}" Margin="0,5,0,8"/>
+   <WrapPanel Margin="0,0,0,12">
+    <Button Content="{loc:Tr NewDictionary}" Click="NewDictionary_Click"/>
+    <Button Content="{loc:Tr Import}" Click="Import_Click"/>
+    <Button x:Name="ExportButton" Content="{loc:Tr Export}" Click="Export_Click" IsEnabled="False"/>
+    <Button x:Name="DeleteDictionaryButton" Content="{loc:Tr DeleteDictionary}" Click="DeleteDictionary_Click" IsEnabled="False"/>
+   </WrapPanel>
+   <TextBlock Text="{loc:Tr DictionaryName}"/>
+   <DockPanel Margin="0,5,0,6">
+    <Button x:Name="SaveDictionaryButton" DockPanel.Dock="Right" Content="{loc:Tr CreateDictionary}" Click="SaveDictionary_Click" Margin="8,0,0,0"/>
+    <TextBox x:Name="NameBox" AutomationProperties.Name="{loc:Tr DictionaryName}"/>
+   </DockPanel>
+   <TextBlock x:Name="StatusText" TextWrapping="Wrap" Foreground="#415672" Margin="0,2,0,10" AutomationProperties.LiveSetting="Polite"/>
+   <StackPanel x:Name="EntryEditor" IsEnabled="False">
+    <TextBlock Text="{loc:Tr DictionaryEntries}" FontWeight="SemiBold"/>
+    <ListBox x:Name="EntriesBox" SelectionChanged="Entry_Changed" Height="90" Margin="0,5,0,8"
+     AutomationProperties.Name="{loc:Tr DictionaryEntries}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+     <ListBox.ItemTemplate>
+      <DataTemplate>
+       <StackPanel Margin="3,2">
+        <TextBlock Text="{Binding Term}" FontWeight="SemiBold" TextWrapping="Wrap"/>
+        <TextBlock Text="{Binding Details}" Foreground="#65748B" TextWrapping="Wrap"/>
+       </StackPanel>
+      </DataTemplate>
+     </ListBox.ItemTemplate>
+    </ListBox>
+    <Grid Margin="0,0,0,8">
+     <Grid.ColumnDefinitions><ColumnDefinition Width="2*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+     <StackPanel Margin="0,0,10,0">
+      <TextBlock Text="{loc:Tr TermOrAcronym}"/>
+      <TextBox x:Name="TermBox" Margin="0,5,0,0" AutomationProperties.Name="{loc:Tr TermOrAcronym}"/>
+     </StackPanel>
+     <StackPanel Grid.Column="1">
+      <TextBlock Text="{loc:Tr Language}"/>
+      <ComboBox x:Name="LanguageBox" Margin="0,5,0,0" DisplayMemberPath="DisplayName" SelectedValuePath="Code"
+       AutomationProperties.Name="{loc:Tr Language}" SelectionChanged="Language_Changed"/>
+     </StackPanel>
+    </Grid>
+    <Grid Margin="0,0,0,8">
+     <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions>
+     <StackPanel Margin="0,0,10,0">
+      <TextBlock Text="{loc:Tr MeaningOrExpansionOptional}"/>
+      <TextBox x:Name="MeaningBox" Margin="0,5,0,0" AutomationProperties.Name="{loc:Tr MeaningOrExpansionOptional}"/>
+     </StackPanel>
+     <StackPanel x:Name="ReadingFields" Grid.Column="1" Visibility="Collapsed">
+      <TextBlock Text="{loc:Tr JapaneseReadingOptional}"/>
+      <TextBox x:Name="ReadingBox" Margin="0,5,0,0" AutomationProperties.Name="{loc:Tr JapaneseReadingOptional}"/>
+     </StackPanel>
+    </Grid>
+    <WrapPanel>
+     <Button x:Name="SaveEntryButton" Content="{loc:Tr AddEntry}" Style="{StaticResource PrimaryButton}" Click="SaveEntry_Click"/>
+     <Button Content="{loc:Tr NewEntry}" Click="NewEntry_Click"/>
+     <Button x:Name="DeleteEntryButton" Content="{loc:Tr DeleteEntry}" Click="DeleteEntry_Click" IsEnabled="False"/>
+    </WrapPanel>
+   </StackPanel>
+  </StackPanel>
+ </ScrollViewer>
+</UserControl>
